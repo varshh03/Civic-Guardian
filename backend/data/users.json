@@ -1,0 +1,228 @@
+[
+  {
+    "id": "usr-admin-001",
+    "name": "Admin Karur",
+    "email": "admin@karurmc.gov.in",
+    "phone": "9876543210",
+    "password": "pbkdf2_sha256$100000$fb05c074fa1c752ad0bb0402ff682188$8032afbe01a59e865cbccbb934ef77777226b79fa88fcc19743c331d43032f62",
+    "role": "admin",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 0,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-07-09 04:06:01.602624+00:00"
+  },
+  {
+    "id": "usr-off-roads",
+    "name": "Rajan Kumar",
+    "email": "officer.roads@karurmc.gov.in",
+    "phone": "9876543211",
+    "password": "pbkdf2_sha256$100000$5807419076fca60f67a220a73c917ced$da26de70254b39ef428bab5ce8a38b1998854e0886ffcec98868050e64ef3489",
+    "role": "officer",
+    "department_id": "dept-roads",
+    "language": "en",
+    "avatar": null,
+    "points": 110,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-07-09 04:06:01.644170+00:00"
+  },
+  {
+    "id": "usr-off-water",
+    "name": "Meena Devi",
+    "email": "officer.water@karurmc.gov.in",
+    "phone": "9876543212",
+    "password": "pbkdf2_sha256$100000$62e06473cda3e7142d2a39ebad19015e$9ae273fdc12b605500e34112ad978aa8c43b2d7586306d043275cf7899c78037",
+    "role": "officer",
+    "department_id": "dept-water",
+    "language": "en",
+    "avatar": null,
+    "points": 0,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-07-09T04:06:01.709569+00:00"
+  },
+  {
+    "id": "usr-off-elec",
+    "name": "Suresh Babu",
+    "email": "officer.electric@karurmc.gov.in",
+    "phone": "9876543213",
+    "password": "pbkdf2_sha256$100000$f8a2a58c8b13362051c8c9ef5fca2cb6$eed5c3bbc318b361129a336f5a92640b9f89b4511ec3401d2da64a4abb1ec734",
+    "role": "officer",
+    "department_id": "dept-electric",
+    "language": "en",
+    "avatar": null,
+    "points": 0,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-07-09T04:06:01.775090+00:00"
+  },
+  {
+    "id": "usr-cit-001",
+    "name": "முருகன் செல்வம்",
+    "email": "murugan@example.com",
+    "phone": "9500000001",
+    "password": "pbkdf2_sha256$100000$c6fd9e8e01f0975e16406c44ada7c8b3$532c72009a5373471f4ba7d913c44de7536f635038a76e70c2f04df7b8b315a8",
+    "role": "citizen",
+    "department_id": null,
+    "language": "ta",
+    "avatar": null,
+    "points": 85,
+    "badges": [
+      "first_report",
+      "road_warrior"
+    ],
+    "active": true,
+    "created_at": "2026-08-08 04:06:01.833001+00:00"
+  },
+  {
+    "id": "usr-cit-002",
+    "name": "பிரியா லட்சுமி",
+    "email": "priya@example.com",
+    "phone": "9500000002",
+    "password": "pbkdf2_sha256$100000$ff1c547d8cee8bb195ba916557d6fdad$e85963da438ef0524f58ddd4f711c9908880cc1c89dd99cd88bf58f8077cd734",
+    "role": "citizen",
+    "department_id": null,
+    "language": "ta",
+    "avatar": null,
+    "points": 75,
+    "badges": [
+      "first_report",
+      "water_guardian"
+    ],
+    "active": true,
+    "created_at": "2026-08-13 04:06:01.898526+00:00"
+  },
+  {
+    "id": "usr-cit-003",
+    "name": "Arjun Sharma",
+    "email": "arjun@example.com",
+    "phone": "9500000003",
+    "password": "pbkdf2_sha256$100000$f3eb7e4e1e269dd1d5781f9c4eaee36c$c4f1376c0348bb8baae7824424e9b112c24ec4dd51aeb201ced22b18a4ca96d0",
+    "role": "citizen",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 85,
+    "badges": [
+      "first_report"
+    ],
+    "active": true,
+    "created_at": "2026-08-23 04:06:01.948941+00:00"
+  },
+  {
+    "id": "usr-cit-004",
+    "name": "கவிதா சுந்தரம்",
+    "email": "kavitha@example.com",
+    "phone": "9500000004",
+    "password": "pbkdf2_sha256$100000$54e5ff8f96fddf0e6a098140e5693dcf$391218d6e6ab351cc77fe4f0dc9ca0ea561ae5e145abb62e83284399c8de8000",
+    "role": "citizen",
+    "department_id": null,
+    "language": "ta",
+    "avatar": null,
+    "points": 30,
+    "badges": [
+      "first_report"
+    ],
+    "active": true,
+    "created_at": "2026-08-28T04:06:02.008910+00:00"
+  },
+  {
+    "id": "usr-cit-005",
+    "name": "Vijay Anand",
+    "email": "vijay@example.com",
+    "phone": "9500000005",
+    "password": "pbkdf2_sha256$100000$b818b4871371bb7b9fda4c1cb04a8719$df62ec228d5306eb54629f1d6b271ce157149b23780646641a2587f53fe13249",
+    "role": "citizen",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 25,
+    "badges": [
+      "first_report"
+    ],
+    "active": true,
+    "created_at": "2026-09-02T04:06:02.064385+00:00"
+  },
+  {
+    "id": "usr-cit-006",
+    "name": "தமிழ் செல்வி",
+    "email": "tamizh@example.com",
+    "phone": "9500000006",
+    "password": "pbkdf2_sha256$100000$ca038408d2d67df0015db1af92abfbe4$9407062907ec16b4b0746e22739f513feb2e291c045a465ffc60f01d4a6b1f10",
+    "role": "citizen",
+    "department_id": null,
+    "language": "ta",
+    "avatar": null,
+    "points": 20,
+    "badges": [
+      "first_report"
+    ],
+    "active": true,
+    "created_at": "2026-09-07T04:06:02.120853+00:00"
+  },
+  {
+    "id": "usr-cit-007",
+    "name": "Ravi Kumar",
+    "email": "ravi@example.com",
+    "phone": "9500000007",
+    "password": "pbkdf2_sha256$100000$3b6516caa7d4ddc8ef48e73250976974$ae26e3990e6b80f4934d03d6f77cec796e0ed7f1edb3b508ad9dd16f8055ba23",
+    "role": "citizen",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 35,
+    "badges": [
+      "first_report"
+    ],
+    "active": true,
+    "created_at": "2026-09-12 04:06:02.181801+00:00"
+  },
+  {
+    "id": "usr-cit-008",
+    "name": "அனிதா ராஜ்",
+    "email": "anita@example.com",
+    "phone": "9500000008",
+    "password": "pbkdf2_sha256$100000$ed21d9042a08a2282cd19a46708ee84d$d7c690a93b71c2d6684f5de91dcec4556cb257096e9ec16e6b536e7acfe43135",
+    "role": "citizen",
+    "department_id": null,
+    "language": "ta",
+    "avatar": null,
+    "points": 10,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-09-17T04:06:02.236572+00:00"
+  },
+  {
+    "id": "bcaea16d-f6c8-4574-ab59-297bedaf8904",
+    "name": "shakthi",
+    "email": "shakthi@gmail.com",
+    "phone": "9043191173",
+    "password": "pbkdf2_sha256$100000$6a9d136310c23569775f01f0e5395d65$f25337b03ecc3f02aae35a6a0723a39b1631594a9bb177124bd5a2925c10371a",
+    "role": "citizen",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 0,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-10-13 05:25:52.441207+00:00"
+  },
+  {
+    "id": "11a4b48f-68bd-4201-bb91-d7d0ba6eaf4f",
+    "name": "New Test Citizen",
+    "email": "newcitizen_97d5f6@example.com",
+    "phone": "+919999999999",
+    "password": "pbkdf2_sha256$100000$5cdeded35a4a773ae00560753e3fed85$f2a789df273bea64495474710cef3e79fdb5ed378ed8e981f3a9ff203ad8cd20",
+    "role": "citizen",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 0,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-10-13 08:17:36.745883+00:00"
+  }
+]

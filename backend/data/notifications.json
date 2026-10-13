@@ -1,0 +1,183 @@
+[
+  {
+    "id": "b09ec7ed-39c3-44d5-9b1a-334aef58edfa",
+    "user_id": "usr-cit-001",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00001",
+    "actor_id": "usr-off-roads",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00001"
+    },
+    "read": false,
+    "created_at": "2026-09-09T12:06:02.236572+00:00"
+  },
+  {
+    "id": "90564684-2360-4500-97cb-c0a94da5e67b",
+    "user_id": "usr-cit-002",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00002",
+    "actor_id": "usr-off-water",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00002"
+    },
+    "read": false,
+    "created_at": "2026-09-12T12:06:02.236572+00:00"
+  },
+  {
+    "id": "7dd68aee-e5ff-435e-aa00-3428e0e25689",
+    "user_id": "usr-cit-003",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00003",
+    "actor_id": "usr-off-elec",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00003"
+    },
+    "read": false,
+    "created_at": "2026-09-15T12:06:02.236572+00:00"
+  },
+  {
+    "id": "ab8f706c-ad8d-4b47-b4ce-25e6f10a1a3f",
+    "user_id": "usr-cit-004",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00004",
+    "actor_id": "usr-off-roads",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00004"
+    },
+    "read": true,
+    "created_at": "2026-09-17T12:06:02.236572+00:00"
+  },
+  {
+    "id": "cc90abe5-39db-430b-bbe7-eedf5cf29c7f",
+    "user_id": "usr-cit-005",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00005",
+    "actor_id": "usr-off-water",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00005"
+    },
+    "read": true,
+    "created_at": "2026-09-19T12:06:02.236572+00:00"
+  },
+  {
+    "id": "e31969dd-c9ca-4fbf-963c-76d88592b31d",
+    "user_id": "usr-cit-006",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00006",
+    "actor_id": "usr-off-elec",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00006"
+    },
+    "read": true,
+    "created_at": "2026-09-22T12:06:02.236572+00:00"
+  },
+  {
+    "id": "1e50f6fe-559b-4e78-8d12-90ab2b6af660",
+    "user_id": "usr-cit-007",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00007",
+    "actor_id": "usr-off-roads",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "In Progress",
+      "id": "KRR-2026-00007"
+    },
+    "read": false,
+    "created_at": "2026-09-27T12:06:02.236572+00:00"
+  },
+  {
+    "id": "e407a359-343e-4bd3-904f-df38ee68ffa4",
+    "user_id": "usr-cit-008",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00008",
+    "actor_id": "usr-off-water",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "In Progress",
+      "id": "KRR-2026-00008"
+    },
+    "read": false,
+    "created_at": "2026-09-29T12:06:02.236572+00:00"
+  },
+  {
+    "id": "4a48b0e0-ce32-4037-bf2b-ba71a849a602",
+    "user_id": "usr-off-roads",
+    "type": "support",
+    "complaint_id": "KRR-2026-00048",
+    "actor_id": "usr-cit-003",
+    "message_key": "notification.new_support",
+    "params": {
+      "id": "KRR-2026-00048"
+    },
+    "read": false,
+    "created_at": "2026-10-12 15:06:03.726001+00:00"
+  },
+  {
+    "id": "8fee831a-246a-45eb-8921-f750c4fe8c21",
+    "user_id": "usr-off-roads",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00051",
+    "actor_id": "usr-admin-001",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "In Progress",
+      "id": "KRR-2026-00051"
+    },
+    "read": false,
+    "created_at": "2026-10-13 05:37:06.417077+00:00"
+  },
+  {
+    "id": "c8686857-7afc-4613-86dd-da81aec7ec62",
+    "user_id": "usr-cit-007",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00007",
+    "actor_id": "usr-off-roads",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00007"
+    },
+    "read": false,
+    "created_at": "2026-10-13 05:37:48.164277+00:00"
+  },
+  {
+    "id": "d88a7016-9b4a-45f9-958b-83e5fe8d082e",
+    "user_id": "usr-cit-008",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00007",
+    "actor_id": "usr-off-roads",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00007"
+    },
+    "read": false,
+    "created_at": "2026-10-13 05:37:48.164277+00:00"
+  },
+  {
+    "id": "8d648f47-bd86-4229-ac96-263fced8c47f",
+    "user_id": "usr-cit-003",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00046",
+    "actor_id": "usr-off-roads",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "In Progress",
+      "id": "KRR-2026-00046"
+    },
+    "read": false,
+    "created_at": "2026-10-13 05:37:59.512965+00:00"
+  }
+]

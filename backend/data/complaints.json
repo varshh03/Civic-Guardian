@@ -1,0 +1,1059 @@
+[
+  {
+    "id": "KRR-2026-00001",
+    "user_id": "usr-cit-001",
+    "issue_type": "pothole",
+    "severity": "High",
+    "severity_reason": "severity.reason.large_pothole_area",
+    "title": "சாலையில் பெரிய குழி",
+    "description": "Issue detected at Karur Main Road. Requires immediate attention from the concerned department.",
+    "language": "ta",
+    "text_original": {
+      "title": "சாலையில் பெரிய குழி",
+      "description": "Issue at Karur Main Road."
+    },
+    "text_en": {
+      "title": "Large Pothole on Main Road",
+      "description": "Issue detected at Karur Main Road."
+    },
+    "image": "demo_pothole_01.jpg",
+    "resolution_image": "demo_pothole_02.jpg",
+    "lat": 10.958345884856655,
+    "lng": 78.08160679794969,
+    "address": "Karur Main Road",
+    "location_source": "gps",
+    "main_road": true,
+    "department_id": "dept-roads",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-09T04:06:02.236572+00:00",
+        "by": "usr-cit-001",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-09T12:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-09T20:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-09-10T04:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to Resolved"
+      }
+    ],
+    "upvotes": [
+      "usr-cit-002",
+      "usr-cit-001",
+      "usr-cit-006",
+      "usr-cit-003",
+      "usr-cit-008"
+    ],
+    "followers": [
+      "usr-cit-001",
+      "usr-cit-003"
+    ],
+    "ai_issue_type": "pothole",
+    "ai_confidence": 0.92,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.68,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-09T04:06:02.236572+00:00",
+    "updated_at": "2026-09-10T12:06:02.236572+00:00",
+    "resolved_at": "2026-09-11T04:06:02.236572+00:00"
+  },
+  {
+    "id": "KRR-2026-00002",
+    "user_id": "usr-cit-002",
+    "issue_type": "water_leak",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.moderate_water_leak",
+    "title": "பெரிய நீர் கசிவு",
+    "description": "Issue detected at Jawahar Bazaar. Requires immediate attention from the concerned department.",
+    "language": "ta",
+    "text_original": {
+      "title": "பெரிய நீர் கசிவு",
+      "description": "Issue at Jawahar Bazaar."
+    },
+    "text_en": {
+      "title": "Major Water Leak Reported",
+      "description": "Issue detected at Jawahar Bazaar."
+    },
+    "image": "demo_water_leak_02.jpg",
+    "resolution_image": "demo_water_leak_03.jpg",
+    "lat": 10.959574780959446,
+    "lng": 78.07343064357356,
+    "address": "Jawahar Bazaar",
+    "location_source": "gps",
+    "main_road": false,
+    "department_id": "dept-water",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-12T04:06:02.236572+00:00",
+        "by": "usr-cit-002",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-12T12:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-12T20:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-09-13T04:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to Resolved"
+      }
+    ],
+    "upvotes": [],
+    "followers": [
+      "usr-cit-002"
+    ],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.83,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.82,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-12T04:06:02.236572+00:00",
+    "updated_at": "2026-09-13T12:06:02.236572+00:00",
+    "resolved_at": "2026-09-14T04:06:02.236572+00:00"
+  },
+  {
+    "id": "KRR-2026-00003",
+    "user_id": "usr-cit-003",
+    "issue_type": "streetlight",
+    "severity": "High",
+    "severity_reason": "severity.reason.main_road_streetlight",
+    "title": "Multiple Lights Not Working",
+    "description": "Issue detected at K.B. Colony. Requires immediate attention from the concerned department.",
+    "language": "en",
+    "text_original": {
+      "title": "Multiple Lights Not Working",
+      "description": "Issue at K.B. Colony."
+    },
+    "text_en": {
+      "title": "Multiple Lights Not Working",
+      "description": "Issue detected at K.B. Colony."
+    },
+    "image": "demo_streetlight_03.jpg",
+    "resolution_image": "demo_streetlight_04.jpg",
+    "lat": 10.95462327700733,
+    "lng": 78.08839255757995,
+    "address": "K.B. Colony",
+    "location_source": "gps",
+    "main_road": false,
+    "department_id": "dept-electric",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-15 04:06:02.236572+00:00",
+        "by": "usr-cit-003",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-15 12:06:02.236572+00:00",
+        "by": "usr-off-elec",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-15 20:06:02.236572+00:00",
+        "by": "usr-off-elec",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-09-16 04:06:02.236572+00:00",
+        "by": "usr-off-elec",
+        "note": "Status updated to Resolved"
+      }
+    ],
+    "upvotes": [
+      "usr-cit-008",
+      "usr-cit-003"
+    ],
+    "followers": [
+      "usr-cit-001",
+      "usr-cit-007",
+      "usr-cit-003"
+    ],
+    "ai_issue_type": "streetlight",
+    "ai_confidence": 0.75,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.7,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-15 04:06:02.236572+00:00",
+    "updated_at": "2026-10-12 15:08:17.566605+00:00",
+    "resolved_at": "2026-09-17 04:06:02.236572+00:00"
+  },
+  {
+    "id": "KRR-2026-00004",
+    "user_id": "usr-cit-004",
+    "issue_type": "pothole",
+    "severity": "High",
+    "severity_reason": "severity.reason.large_pothole_area",
+    "title": "சேதமடைந்த சாலை",
+    "description": "Issue detected at Raja Mill Road. Requires immediate attention from the concerned department.",
+    "language": "ta",
+    "text_original": {
+      "title": "சேதமடைந்த சாலை",
+      "description": "Issue at Raja Mill Road."
+    },
+    "text_en": {
+      "title": "Damaged Road Surface",
+      "description": "Issue detected at Raja Mill Road."
+    },
+    "image": "demo_pothole_04.jpg",
+    "resolution_image": "demo_pothole_05.jpg",
+    "lat": 10.948419709202549,
+    "lng": 78.09283591752194,
+    "address": "Raja Mill Road",
+    "location_source": "gps",
+    "main_road": false,
+    "department_id": "dept-roads",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-17T04:06:02.236572+00:00",
+        "by": "usr-cit-004",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-17T12:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-17T20:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-09-18T04:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to Resolved"
+      }
+    ],
+    "upvotes": [],
+    "followers": [
+      "usr-cit-004"
+    ],
+    "ai_issue_type": "pothole",
+    "ai_confidence": 0.75,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.73,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-17T04:06:02.236572+00:00",
+    "updated_at": "2026-09-18T12:06:02.236572+00:00",
+    "resolved_at": "2026-09-19T04:06:02.236572+00:00"
+  },
+  {
+    "id": "KRR-2026-00005",
+    "user_id": "usr-cit-005",
+    "issue_type": "water_leak",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.moderate_water_leak",
+    "title": "சேதமடைந்த நீர் வழி",
+    "description": "Issue detected at Kovai Road Junction. Requires immediate attention from the concerned department.",
+    "language": "ta",
+    "text_original": {
+      "title": "சேதமடைந்த நீர் வழி",
+      "description": "Issue at Kovai Road Junction."
+    },
+    "text_en": {
+      "title": "Damaged Water Main",
+      "description": "Issue detected at Kovai Road Junction."
+    },
+    "image": "demo_water_leak_05.jpg",
+    "resolution_image": "demo_water_leak_06.jpg",
+    "lat": 10.961069154361027,
+    "lng": 78.0883782205953,
+    "address": "Kovai Road Junction",
+    "location_source": "gps",
+    "main_road": true,
+    "department_id": "dept-water",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-19T04:06:02.236572+00:00",
+        "by": "usr-cit-005",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-19T12:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-19T20:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-09-20T04:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to Resolved"
+      }
+    ],
+    "upvotes": [
+      "usr-cit-008",
+      "usr-cit-005",
+      "usr-cit-001",
+      "usr-cit-004",
+      "usr-cit-006"
+    ],
+    "followers": [
+      "usr-cit-005",
+      "usr-cit-006"
+    ],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.85,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.88,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-19T04:06:02.236572+00:00",
+    "updated_at": "2026-09-20T12:06:02.236572+00:00",
+    "resolved_at": "2026-09-21T04:06:02.236572+00:00"
+  },
+  {
+    "id": "KRR-2026-00006",
+    "user_id": "usr-cit-006",
+    "issue_type": "streetlight",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.streetlight_faulty",
+    "title": "Faulty Streetlight",
+    "description": "Issue detected at Thanthoni. Requires immediate attention from the concerned department.",
+    "language": "en",
+    "text_original": {
+      "title": "Faulty Streetlight",
+      "description": "Issue at Thanthoni."
+    },
+    "text_en": {
+      "title": "Faulty Streetlight",
+      "description": "Issue detected at Thanthoni."
+    },
+    "image": "demo_streetlight_06.jpg",
+    "resolution_image": "demo_streetlight_07.jpg",
+    "lat": 10.969521082800911,
+    "lng": 78.07628070069751,
+    "address": "Thanthoni",
+    "location_source": "gps",
+    "main_road": false,
+    "department_id": "dept-electric",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-22T04:06:02.236572+00:00",
+        "by": "usr-cit-006",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-22T12:06:02.236572+00:00",
+        "by": "usr-off-elec",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-22T20:06:02.236572+00:00",
+        "by": "usr-off-elec",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-09-23T04:06:02.236572+00:00",
+        "by": "usr-off-elec",
+        "note": "Status updated to Resolved"
+      }
+    ],
+    "upvotes": [
+      "usr-cit-004",
+      "usr-cit-007",
+      "usr-cit-001",
+      "usr-cit-008",
+      "usr-cit-003",
+      "usr-cit-002"
+    ],
+    "followers": [
+      "usr-cit-008",
+      "usr-cit-006",
+      "usr-cit-003"
+    ],
+    "ai_issue_type": "streetlight",
+    "ai_confidence": 0.86,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.86,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-22T04:06:02.236572+00:00",
+    "updated_at": "2026-09-23T12:06:02.236572+00:00",
+    "resolved_at": "2026-09-24T04:06:02.236572+00:00"
+  },
+  {
+    "id": "KRR-2026-00007",
+    "user_id": "usr-cit-007",
+    "issue_type": "pothole",
+    "severity": "High",
+    "severity_reason": "severity.reason.large_pothole_area",
+    "title": "சந்திப்பில் சாலை சேதம்",
+    "description": "Issue detected at Kadavur Road. Requires immediate attention from the concerned department.",
+    "language": "ta",
+    "text_original": {
+      "title": "சந்திப்பில் சாலை சேதம்",
+      "description": "Issue at Kadavur Road."
+    },
+    "text_en": {
+      "title": "Road Damage Near Junction",
+      "description": "Issue detected at Kadavur Road."
+    },
+    "image": "demo_pothole_07.jpg",
+    "resolution_image": null,
+    "lat": 10.94401782176703,
+    "lng": 78.07315809340255,
+    "address": "Kadavur Road",
+    "location_source": "gps",
+    "main_road": false,
+    "department_id": "dept-roads",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-27 04:06:02.236572+00:00",
+        "by": "usr-cit-007",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-27 12:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-27 20:06:02.236572+00:00",
+        "by": "usr-off-roads",
+        "note": "Status updated to In Progress"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-10-13 05:37:48.164277+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      }
+    ],
+    "upvotes": [
+      "usr-cit-003",
+      "usr-cit-005",
+      "usr-cit-006",
+      "usr-cit-002"
+    ],
+    "followers": [
+      "usr-cit-007",
+      "usr-cit-008"
+    ],
+    "ai_issue_type": "pothole",
+    "ai_confidence": 0.84,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.82,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-27 04:06:02.236572+00:00",
+    "updated_at": "2026-10-13 05:37:48.164277+00:00",
+    "resolved_at": "2026-10-13 05:37:48.164277+00:00"
+  },
+  {
+    "id": "KRR-2026-00008",
+    "user_id": "usr-cit-008",
+    "issue_type": "water_leak",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.moderate_water_leak",
+    "title": "வடிகால் நீர் புரட்டு",
+    "description": "Issue detected at Bus Stand Area. Requires immediate attention from the concerned department.",
+    "language": "ta",
+    "text_original": {
+      "title": "வடிகால் நீர் புரட்டு",
+      "description": "Issue at Bus Stand Area."
+    },
+    "text_en": {
+      "title": "Overflowing Drainage",
+      "description": "Issue detected at Bus Stand Area."
+    },
+    "image": "demo_water_leak_08.jpg",
+    "resolution_image": null,
+    "lat": 10.955543931374345,
+    "lng": 78.08407163885734,
+    "address": "Bus Stand Area",
+    "location_source": "gps",
+    "main_road": false,
+    "department_id": "dept-water",
+    "status": "In Progress",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-09-29T04:06:02.236572+00:00",
+        "by": "usr-cit-008",
+        "note": ""
+      },
+      {
+        "status": "Acknowledged",
+        "at": "2026-09-29T12:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to Acknowledged"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-09-29T20:06:02.236572+00:00",
+        "by": "usr-off-water",
+        "note": "Status updated to In Progress"
+      }
+    ],
+    "upvotes": [
+      "usr-cit-001",
+      "usr-cit-002",
+      "usr-cit-008",
+      "usr-cit-003",
+      "usr-cit-004",
+      "usr-cit-007"
+    ],
+    "followers": [
+      "usr-cit-008"
+    ],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.91,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.74,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-09-29T04:06:02.236572+00:00",
+    "updated_at": "2026-09-30T04:06:02.236572+00:00",
+    "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00046",
+    "user_id": "usr-cit-003",
+    "issue_type": "pothole",
+    "severity": "High",
+    "severity_reason": "severity.reason.large_pothole_area",
+    "title": "Urgent Repair Needed for Potholes in Karur Municipality",
+    "description": "Several large potholes on main roads in Karur Municipality pose a significant risk to vehicles and pedestrians. Immediate attention is required to repair these hazardous conditions and ensure safety for all commuters.",
+    "language": "en",
+    "text_original": {
+      "title": "Urgent Repair Needed for Potholes in Karur Municipality",
+      "description": "Several large potholes on main roads in Karur Municipality pose a significant risk to vehicles and pedestrians. Immediate attention is required to repair these hazardous conditions and ensure safety for all commuters."
+    },
+    "text_en": {
+      "title": "Urgent Repair Needed for Potholes in Karur Municipality",
+      "description": "Several large potholes on main roads in Karur Municipality pose a significant risk to vehicles and pedestrians. Immediate attention is required to repair these hazardous conditions and ensure safety for all commuters."
+    },
+    "image": "9f60fb39-271f-4cff-a4c9-abbc2ed419d6.jpg",
+    "resolution_image": null,
+    "lat": 10.95152671759766,
+    "lng": 78.10402306155645,
+    "address": "Puliyur vandi kadai near",
+    "location_source": "gps",
+    "main_road": true,
+    "department_id": "dept-roads",
+    "status": "In Progress",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-07 04:21:01.897475+00:00",
+        "by": "usr-cit-003",
+        "note": ""
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-10-13 05:37:59.512965+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      }
+    ],
+    "upvotes": [],
+    "followers": [],
+    "ai_issue_type": "pothole",
+    "ai_confidence": 0.95,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.95,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-07 04:21:01.897475+00:00",
+    "updated_at": "2026-10-13 05:37:59.512965+00:00",
+    "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00047",
+    "user_id": "usr-cit-003",
+    "issue_type": "water_leak",
+    "severity": "High",
+    "severity_reason": "severity.reason.major_water_leak",
+    "title": "Urgent Water Leak Reporting in Karur Municipality",
+    "description": "A significant water leak has been detected in the municipality, causing disruption and potential damage. Immediate inspection and repair are essential to prevent further wastage and address the concerns of local residents.",
+    "language": "en",
+    "text_original": {
+      "title": "Urgent Water Leak Reporting in Karur Municipality",
+      "description": "A significant water leak has been detected in the municipality, causing disruption and potential damage. Immediate inspection and repair are essential to prevent further wastage and address the concerns of local residents."
+    },
+    "text_en": {
+      "title": "Urgent Water Leak Reporting in Karur Municipality",
+      "description": "A significant water leak has been detected in the municipality, causing disruption and potential damage. Immediate inspection and repair are essential to prevent further wastage and address the concerns of local residents."
+    },
+    "image": "d53d58f1-990e-4a51-a89e-4f79ca5414a7.jpg",
+    "resolution_image": null,
+    "lat": 10.955166037224092,
+    "lng": 78.07289396464887,
+    "address": "Chinnandankoil, Karur, 639001",
+    "location_source": "manual",
+    "main_road": true,
+    "department_id": "dept-water",
+    "status": "Submitted",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-07 07:32:36.858228+00:00",
+        "by": "usr-cit-003",
+        "note": ""
+      }
+    ],
+    "upvotes": [],
+    "followers": [],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.95,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.95,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-07 07:32:36.858228+00:00",
+    "updated_at": "2026-10-07 07:32:36.858228+00:00",
+    "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00048",
+    "user_id": "usr-off-roads",
+    "issue_type": "pothole",
+    "severity": "High",
+    "severity_reason": "severity.reason.large_pothole_area",
+    "title": "கரூர் மாநகரில் குழிக்கடுத்துகள்",
+    "description": "கரூர் மாநகரில் குறிப்பிடத்தக்க அளவிலான குழிக்கடுத்துகள் இருப்பதால், வாகனங்கள் போலியின் பாதிப்பு உண்டாக்குகின்றன. இதனால் பயணிகள் மற்றும் வாகனங்கள் உறுப்புக்கு மிகுந்த ஆபத்து ஏற்படுகிறது. தயவுசெய்து உடனடியாக பாதத்தை சரிசெய்யவும்.",
+    "language": "ta",
+    "text_original": {
+      "title": "கரூர் மாநகரில் குழிக்கடுத்துகள்",
+      "description": "கரூர் மாநகரில் குறிப்பிடத்தக்க அளவிலான குழிக்கடுத்துகள் இருப்பதால், வாகனங்கள் போலியின் பாதிப்பு உண்டாக்குகின்றன. இதனால் பயணிகள் மற்றும் வாகனங்கள் உறுப்புக்கு மிகுந்த ஆபத்து ஏற்படுகிறது. தயவுசெய்து உடனடியாக பாதத்தை சரிசெய்யவும்."
+    },
+    "text_en": {
+      "title": "Pit Holes in Karur City",
+      "description": "Due to the significant number of pit holes in Karur city, vehicles are causing a lot of disturbances. This poses a great danger to passengers and vehicles. Please take immediate action to repair the road."
+    },
+    "image": "5ef8ce2f-e548-40e5-a627-809c41049eb9.jpg",
+    "resolution_image": null,
+    "lat": 10.961198172346228,
+    "lng": 78.08224092096842,
+    "address": "near Gh karur",
+    "location_source": "manual",
+    "main_road": false,
+    "department_id": "dept-roads",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-07 08:48:58.792966+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-10-13 06:39:18.805806+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      }
+    ],
+    "upvotes": [
+      "usr-cit-003"
+    ],
+    "followers": [],
+    "ai_issue_type": "pothole",
+    "ai_confidence": 0.95,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.95,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-07 08:48:58.792966+00:00",
+    "updated_at": "2026-10-13 06:39:18.805806+00:00",
+    "resolved_at": "2026-10-13 06:39:18.805806+00:00"
+  },
+  {
+    "id": "KRR-2026-00049",
+    "user_id": "usr-cit-001",
+    "issue_type": "streetlight",
+    "severity": "High",
+    "severity_reason": "severity.reason.main_road_streetlight",
+    "title": "Streetlight not working near Light House Corner",
+    "description": "Main junction streetlight has been off for 3 days causing nighttime hazards for vehicles.",
+    "language": "en",
+    "text_original": {
+      "title": "Streetlight not working near Light House Corner",
+      "description": "Main junction streetlight has been off for 3 days causing nighttime hazards for vehicles."
+    },
+    "text_en": {
+      "title": "Streetlight not working near Light House Corner",
+      "description": "Main junction streetlight has been off for 3 days causing nighttime hazards for vehicles."
+    },
+    "image": "demo_streetlight_01.jpg",
+    "resolution_image": null,
+    "lat": 10.9602,
+    "lng": 78.0772,
+    "address": "Light House Corner, Covai Road, Karur",
+    "location_source": "gps",
+    "main_road": true,
+    "department_id": "dept-electric",
+    "status": "Submitted",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-07 08:58:23.800884+00:00",
+        "by": "usr-cit-001",
+        "note": ""
+      }
+    ],
+    "upvotes": [
+      "usr-cit-002"
+    ],
+    "followers": [
+      "usr-cit-001"
+    ],
+    "ai_issue_type": "streetlight",
+    "ai_confidence": 0.92,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.92,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-07 08:58:23.800884+00:00",
+    "updated_at": "2026-10-12 15:06:02.113910+00:00",
+    "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00050",
+    "user_id": "usr-cit-003",
+    "issue_type": "water_leak",
+    "severity": "High",
+    "severity_reason": "severity.reason.major_water_leak",
+    "title": "Urgent Water Leak in Karur Municipality",
+    "description": "A significant water leak has been detected in [specific location or street name] of Karur Municipality. Immediate action is required to repair the leak to prevent water wastage and potential damage to nearby properties.",
+    "language": "en",
+    "text_original": {
+      "title": "Urgent Water Leak in Karur Municipality",
+      "description": "A significant water leak has been detected in [specific location or street name] of Karur Municipality. Immediate action is required to repair the leak to prevent water wastage and potential damage to nearby properties."
+    },
+    "text_en": {
+      "title": "Urgent Water Leak in Karur Municipality",
+      "description": "A significant water leak has been detected in [specific location or street name] of Karur Municipality. Immediate action is required to repair the leak to prevent water wastage and potential damage to nearby properties."
+    },
+    "image": "d62559a1-23a9-4c83-ad26-6540566efa9f.jpg",
+    "resolution_image": null,
+    "lat": 10.939733457056299,
+    "lng": 78.14412327925976,
+    "address": "புலியூர், 639114",
+    "location_source": "manual",
+    "main_road": true,
+    "department_id": "dept-water",
+    "status": "Submitted",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-07 09:46:23.728666+00:00",
+        "by": "usr-cit-003",
+        "note": ""
+      }
+    ],
+    "upvotes": [],
+    "followers": [],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.95,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.95,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-07 09:46:23.728666+00:00",
+    "updated_at": "2026-10-12 15:06:05.752754+00:00",
+    "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00051",
+    "user_id": "usr-off-roads",
+    "issue_type": "pothole",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.moderate_pothole",
+    "title": "Pothole Hazard on Main Road Near Bus Stop",
+    "description": "A medium-sized pothole has formed on the main road near the bus stop in Karur Municipality, causing inconvenience and potential hazards for drivers and pedestrians. Prompt repair is needed to ensure safety and improve road conditions.",
+    "language": "en",
+    "text_original": {
+      "title": "Pothole Hazard on Main Road Near Bus Stop",
+      "description": "A medium-sized pothole has formed on the main road near the bus stop in Karur Municipality, causing inconvenience and potential hazards for drivers and pedestrians. Prompt repair is needed to ensure safety and improve road conditions."
+    },
+    "text_en": {
+      "title": "Pothole Hazard on Main Road Near Bus Stop",
+      "description": "A medium-sized pothole has formed on the main road near the bus stop in Karur Municipality, causing inconvenience and potential hazards for drivers and pedestrians. Prompt repair is needed to ensure safety and improve road conditions."
+    },
+    "image": "47df20ea-bdb2-466f-82b6-0428ab6dbc3c.jpg",
+    "resolution_image": "res_5d0ad050-9849-46c0-9e65-efe778d9656d.jpg",
+    "lat": 10.95615507037493,
+    "lng": 78.0758023280304,
+    "address": "Chinna Andan Koil Road, State Bank colony, Karur, 639008",
+    "location_source": "manual",
+    "main_road": false,
+    "department_id": "dept-roads",
+    "status": "Resolved",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-12 15:16:00.007117+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-10-13 05:34:01.492976+00:00",
+        "by": "usr-off-roads",
+        "note": "Work started by road crew"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-10-13 05:34:01.533587+00:00",
+        "by": "usr-off-roads",
+        "note": "Pothole filled and leveled"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-10-13 05:34:01.625087+00:00",
+        "by": "usr-off-roads",
+        "note": "Reset for testing"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-10-13 05:37:06.304610+00:00",
+        "by": "usr-off-roads",
+        "note": "Work order dispatched to team"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-10-13 05:37:06.362576+00:00",
+        "by": "usr-off-roads",
+        "note": "Pothole patch completed and compacted"
+      },
+      {
+        "status": "In Progress",
+        "at": "2026-10-13 05:37:06.417077+00:00",
+        "by": "usr-admin-001",
+        "note": "Admin reopening for review"
+      },
+      {
+        "status": "Resolved",
+        "at": "2026-10-13 07:52:30.334245+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      }
+    ],
+    "upvotes": [],
+    "followers": [],
+    "ai_issue_type": "pothole",
+    "ai_confidence": 0.82,
+    "detector_mode": "stub",
+    "verification": {
+      "ai_confidence": 0.82,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-12 15:16:00.007117+00:00",
+    "updated_at": "2026-10-13 07:52:30.334245+00:00",
+    "resolved_at": "2026-10-13 07:52:30.334245+00:00"
+  },
+  {
+    "id": "KRR-2026-00052",
+    "user_id": "usr-off-roads",
+    "issue_type": "water_leak",
+    "severity": "High",
+    "severity_reason": "severity.reason.major_water_leak",
+    "title": "காரூர் நாடு: நீர் சுருக்கு பிரச்சினை",
+    "description": "காரூர் மユபாலிக்கையில் நீர் சுருக்கம் ஏற்பட்டுள்ளது. இது பொதுமக்களின் வாழ்க்கையை பாதிக்கின்றது. அவசரமான அடிக்கொண்டு இதனை சரிசெய்ய நடவடிக்கை எடுக்க வேண்டும்.",
+    "language": "ta",
+    "text_original": {
+      "title": "காரூர் நாடு: நீர் சுருக்கு பிரச்சினை",
+      "description": "காரூர் மユபாலிக்கையில் நீர் சுருக்கம் ஏற்பட்டுள்ளது. இது பொதுமக்களின் வாழ்க்கையை பாதிக்கின்றது. அவசரமான அடிக்கொண்டு இதனை சரிசெய்ய நடவடிக்கை எடுக்க வேண்டும்."
+    },
+    "text_en": {
+      "title": "Karur District: Water Leakage Issue",
+      "description": "There is a water leakage in the Karur municipality. This is affecting the lives of the public. Urgent action must be taken to rectify this issue."
+    },
+    "image": "d52665e9-0830-48a3-9048-6a629f59c72e.jpg",
+    "resolution_image": null,
+    "lat": 10.957540472387773,
+    "lng": 78.08124438254745,
+    "address": "Chinnandankoil, Karur, 639001",
+    "location_source": "manual",
+    "main_road": false,
+    "department_id": "dept-water",
+    "status": "Submitted",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-13 07:51:52.678488+00:00",
+        "by": "usr-off-roads",
+        "note": ""
+      }
+    ],
+    "upvotes": [],
+    "followers": [],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.92,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.92,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-13 07:51:52.678488+00:00",
+    "updated_at": "2026-10-13 07:51:52.678488+00:00",
+    "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00053",
+    "user_id": "usr-cit-002",
+    "issue_type": "water_leak",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.moderate_water_leak",
+    "title": "காரணத்தில் உள்ள நீர் ஊற்று குறித்த புகார்",
+    "description": "கரூர் மாநகரத்தில் உள்ள இக் கட்டிடத்தில் நீர் ஊற்றுகிறது. இது சுகாதார பிரச்சினைகளை உருவாக்குகிறது. விரைந்து நடவடிக்கை மேற்கொண்டு சரிசெய்ய வேண்டுகிறேன்.",
+    "language": "ta",
+    "text_original": {
+      "title": "காரணத்தில் உள்ள நீர் ஊற்று குறித்த புகார்",
+      "description": "கரூர் மாநகரத்தில் உள்ள இக் கட்டிடத்தில் நீர் ஊற்றுகிறது. இது சுகாதார பிரச்சினைகளை உருவாக்குகிறது. விரைந்து நடவடிக்கை மேற்கொண்டு சரிசெய்ய வேண்டுகிறேன்."
+    },
+    "text_en": {
+      "title": "Complaint Regarding Water Leakage",
+      "description": "There is a water leakage in this building located in Karur municipality. This is causing health issues. I request immediate action to rectify this."
+    },
+    "image": "a4c01a8d-c4eb-4598-b478-5f165ffbaa0e.jpg",
+    "resolution_image": null,
+    "lat": 10.967404763274125,
+    "lng": 78.04816078548393,
+    "address": "Reddipalayam, Karur, 639008",
+    "location_source": "manual",
+    "main_road": false,
+    "department_id": "dept-water",
+    "status": "Submitted",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-13 15:28:05.567583+00:00",
+        "by": "usr-cit-002",
+        "note": ""
+      }
+    ],
+    "upvotes": [
+      "usr-cit-002"
+    ],
+    "followers": [],
+    "ai_issue_type": "water_leak",
+    "ai_confidence": 0.92,
+    "detector_mode": "llm",
+    "verification": {
+      "ai_confidence": 0.92,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-13 15:28:05.567583+00:00",
+    "updated_at": "2026-10-13 15:28:18.061245+00:00",
+    "resolved_at": null
+  }
+]

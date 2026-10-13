@@ -1,0 +1,151 @@
+[
+  {
+    "id": "70b48a3b-f0bd-4019-8650-79f6078e0ed6",
+    "complaint_id": "KRR-2026-00001",
+    "user_id": "usr-cit-002",
+    "parent_id": null,
+    "text": "இது உடனடியாக சரி செய்யப்பட வேண்டும்!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-09T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "71c76d15-aae9-4079-b2a5-201abfa2fe14",
+    "complaint_id": "KRR-2026-00001",
+    "user_id": "usr-off-roads",
+    "parent_id": "70b48a3b-f0bd-4019-8650-79f6078e0ed6",
+    "text": "We have acknowledged this issue and dispatched a team to assess it.",
+    "is_official": true,
+    "helpful": [
+      "usr-cit-001"
+    ],
+    "created_at": "2026-09-09T14:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "34d27e0a-fbbf-4556-9c3b-86a0e0a2f237",
+    "complaint_id": "KRR-2026-00002",
+    "user_id": "usr-cit-003",
+    "parent_id": null,
+    "text": "இது உடனடியாக சரி செய்யப்பட வேண்டும்!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-12T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "e8105815-358c-4e5e-9806-bb983df66723",
+    "complaint_id": "KRR-2026-00003",
+    "user_id": "usr-cit-004",
+    "parent_id": null,
+    "text": "This needs urgent attention!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-15T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "eb0ef208-f07d-4fd4-9bd6-03fadc7c1163",
+    "complaint_id": "KRR-2026-00004",
+    "user_id": "usr-cit-005",
+    "parent_id": null,
+    "text": "இது உடனடியாக சரி செய்யப்பட வேண்டும்!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-17T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "b1d7ece6-f1dc-4544-a7da-878e850b100f",
+    "complaint_id": "KRR-2026-00004",
+    "user_id": "usr-off-roads",
+    "parent_id": "eb0ef208-f07d-4fd4-9bd6-03fadc7c1163",
+    "text": "We have acknowledged this issue and dispatched a team to assess it.",
+    "is_official": true,
+    "helpful": [
+      "usr-cit-004"
+    ],
+    "created_at": "2026-09-17T14:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "f8654a64-2aa1-4627-b672-a5476033f55c",
+    "complaint_id": "KRR-2026-00005",
+    "user_id": "usr-cit-006",
+    "parent_id": null,
+    "text": "இது உடனடியாக சரி செய்யப்பட வேண்டும்!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-19T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "a5af4a29-1beb-4ae3-80dd-8caf62642b09",
+    "complaint_id": "KRR-2026-00006",
+    "user_id": "usr-cit-007",
+    "parent_id": null,
+    "text": "This needs urgent attention!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-22T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "3d98483f-606e-4a25-9d21-d0b18662d934",
+    "complaint_id": "KRR-2026-00007",
+    "user_id": "usr-cit-008",
+    "parent_id": null,
+    "text": "இது உடனடியாக சரி செய்யப்பட வேண்டும்!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-27T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "f41dc6c1-db4f-4e21-8113-5cb691ab6e5b",
+    "complaint_id": "KRR-2026-00007",
+    "user_id": "usr-off-roads",
+    "parent_id": "3d98483f-606e-4a25-9d21-d0b18662d934",
+    "text": "We have acknowledged this issue and dispatched a team to assess it.",
+    "is_official": true,
+    "helpful": [
+      "usr-cit-007"
+    ],
+    "created_at": "2026-09-27T14:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "589519ac-de18-416f-bbe2-0a6d0ee06fa7",
+    "complaint_id": "KRR-2026-00008",
+    "user_id": "usr-cit-001",
+    "parent_id": null,
+    "text": "இது உடனடியாக சரி செய்யப்பட வேண்டும்!",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-09-29T06:06:02.236572+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "511e576e-ef60-4f25-82e7-7af96fccedf6",
+    "complaint_id": "KRR-2026-00006",
+    "user_id": "usr-cit-003",
+    "parent_id": null,
+    "text": "2 more lights is not working",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-10-07 08:19:56.405403+00:00",
+    "edited_at": null
+  },
+  {
+    "id": "fc9eec8c-2c5c-4912-b8b9-2132b43b71d1",
+    "complaint_id": "KRR-2026-00003",
+    "user_id": "usr-cit-003",
+    "parent_id": null,
+    "text": "thank you",
+    "is_official": false,
+    "helpful": [],
+    "created_at": "2026-10-12 15:07:43.646937+00:00",
+    "edited_at": null
+  }
+]

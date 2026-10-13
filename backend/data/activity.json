@@ -1,0 +1,107 @@
+[
+  {
+    "id": "bc97cd3e-b831-4d77-8820-e47a55b7b8f9",
+    "user_id": "usr-cit-001",
+    "type": "report",
+    "complaint_id": "KRR-2026-00001",
+    "created_at": "2026-09-09T04:06:02.236572+00:00"
+  },
+  {
+    "id": "d569f456-eed6-4465-b9d3-40c38bd5e9e1",
+    "user_id": "usr-cit-002",
+    "type": "report",
+    "complaint_id": "KRR-2026-00002",
+    "created_at": "2026-09-12T04:06:02.236572+00:00"
+  },
+  {
+    "id": "c821af61-9d55-470e-a64d-908aa03eee52",
+    "user_id": "usr-cit-003",
+    "type": "report",
+    "complaint_id": "KRR-2026-00003",
+    "created_at": "2026-09-15T04:06:02.236572+00:00"
+  },
+  {
+    "id": "47379d62-6e31-4c64-94f4-25e5e411b2a3",
+    "user_id": "usr-cit-004",
+    "type": "report",
+    "complaint_id": "KRR-2026-00004",
+    "created_at": "2026-09-17T04:06:02.236572+00:00"
+  },
+  {
+    "id": "2e5b1ecd-4083-4fbf-918f-27681fcd33bd",
+    "user_id": "usr-cit-005",
+    "type": "report",
+    "complaint_id": "KRR-2026-00005",
+    "created_at": "2026-09-19T04:06:02.236572+00:00"
+  },
+  {
+    "id": "9d09d6d5-2687-4040-8a57-d86d65957167",
+    "user_id": "usr-cit-006",
+    "type": "report",
+    "complaint_id": "KRR-2026-00006",
+    "created_at": "2026-09-22T04:06:02.236572+00:00"
+  },
+  {
+    "id": "be609143-a3f5-488e-a963-c1acb8c773e9",
+    "user_id": "usr-cit-007",
+    "type": "report",
+    "complaint_id": "KRR-2026-00007",
+    "created_at": "2026-09-27T04:06:02.236572+00:00"
+  },
+  {
+    "id": "cac45d54-e0dd-4ed9-ac0b-7a8f9142961f",
+    "user_id": "usr-cit-008",
+    "type": "report",
+    "complaint_id": "KRR-2026-00008",
+    "created_at": "2026-09-29T04:06:02.236572+00:00"
+  },
+  {
+    "id": "4731c238-21b7-4751-8d03-d894c34618b2",
+    "user_id": "usr-cit-003",
+    "type": "report",
+    "complaint_id": "KRR-2026-00046",
+    "created_at": "2026-10-07 04:21:01.897475+00:00"
+  },
+  {
+    "id": "2bb9afe1-889b-4e0c-9291-bdadfde1fa8b",
+    "user_id": "usr-cit-003",
+    "type": "report",
+    "complaint_id": "KRR-2026-00047",
+    "created_at": "2026-10-07 07:32:36.858228+00:00"
+  },
+  {
+    "id": "ab801922-634d-41ae-9700-aa1ba80868cd",
+    "user_id": "usr-off-roads",
+    "type": "report",
+    "complaint_id": "KRR-2026-00048",
+    "created_at": "2026-10-07 08:48:58.792966+00:00"
+  },
+  {
+    "id": "6090887e-6e99-4908-8da9-0fe2284a936b",
+    "user_id": "usr-cit-003",
+    "type": "report",
+    "complaint_id": "KRR-2026-00050",
+    "created_at": "2026-10-07 09:46:23.728666+00:00"
+  },
+  {
+    "id": "9f3b0439-5881-4521-ab0c-1195ec66a202",
+    "user_id": "usr-off-roads",
+    "type": "report",
+    "complaint_id": "KRR-2026-00051",
+    "created_at": "2026-10-12 15:16:00.007117+00:00"
+  },
+  {
+    "id": "5dd919ad-d1fd-4791-99ec-f8cd4c76d143",
+    "user_id": "usr-off-roads",
+    "type": "report",
+    "complaint_id": "KRR-2026-00052",
+    "created_at": "2026-10-13 07:51:52.678488+00:00"
+  },
+  {
+    "id": "71930c46-982c-4415-9eaf-3972444759a8",
+    "user_id": "usr-cit-002",
+    "type": "report",
+    "complaint_id": "KRR-2026-00053",
+    "created_at": "2026-10-13 15:28:05.567583+00:00"
+  }
+]

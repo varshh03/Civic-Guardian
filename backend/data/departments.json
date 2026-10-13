@@ -1,0 +1,29 @@
+[
+  {
+    "id": "dept-roads",
+    "name_en": "Highways & Roads",
+    "name_ta": "நெடுஞ்சாலை மற்றும் சாலைகள்",
+    "issue_types": [
+      "pothole"
+    ],
+    "sla_hours": 72
+  },
+  {
+    "id": "dept-water",
+    "name_en": "Water Supply & Drainage",
+    "name_ta": "நீர் வழங்கல் மற்றும் வடிகால்",
+    "issue_types": [
+      "water_leak"
+    ],
+    "sla_hours": 24
+  },
+  {
+    "id": "dept-electric",
+    "name_en": "Electrical (Street Lighting)",
+    "name_ta": "மின்சார (தெரு விளக்கு)",
+    "issue_types": [
+      "streetlight"
+    ],
+    "sla_hours": 48
+  }
+]
