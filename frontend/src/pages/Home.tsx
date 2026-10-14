@@ -12,6 +12,7 @@ import { Filter, Navigation2, Layers, CheckCircle2, AlertCircle, X } from 'lucid
 import { Link } from 'react-router-dom';
 import { StatusChip } from '../components/StatusChip';
 import { SeverityChip } from '../components/SeverityChip';
+import { getLocalizedComplaintTitle } from '../lib/localizeComplaint';
 import toast from 'react-hot-toast';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
@@ -171,7 +172,7 @@ export const Home = () => {
       </div>
 
       <div className="flex-1 relative z-0">
-        <MapContainer center={KARUR_CENTER} zoom={13} style={{ height: '100%', width: '100%' }}>
+        <MapContainer center={KARUR_CENTER} zoom={14} style={{ height: '100%', width: '100%' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -180,7 +181,7 @@ export const Home = () => {
           <MarkerClusterGroup chunkedLoading>
             {filtered.map(c => {
               const color = colorMode === 'status' ? STATUS_COLORS[c.status] : SEVERITY_COLORS[c.severity] || '#999';
-              const displayTitle = c.language === i18n.language ? c.title : (c.text_original?.title || c.title);
+              const displayTitle = getLocalizedComplaintTitle(c, i18n.language);
               return (
                 <Marker key={c.id} position={[c.lat, c.lng]} icon={createIcon(color)}>
                   <Popup>

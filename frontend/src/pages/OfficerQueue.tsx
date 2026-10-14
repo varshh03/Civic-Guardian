@@ -6,9 +6,10 @@ import { SeverityChip } from '../components/SeverityChip';
 import { OfficerStatusModal } from '../components/OfficerStatusModal';
 import { AlertCircle, Clock, ArrowLeft, LayoutDashboard, Loader2, Edit3 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { getLocalizedComplaintTitle } from '../lib/localizeComplaint';
 
 export const OfficerQueue = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [statusFilter, setStatusFilter] = useState('active');
   const [selectedComplaint, setSelectedComplaint] = useState<any>(null);
   const { data, isLoading } = useOfficerQueue({ status: statusFilter });
@@ -81,7 +82,7 @@ export const OfficerQueue = () => {
                   className="hover:bg-slate-blue-50/50 cursor-pointer transition-colors"
                 >
                   <td className="p-4">
-                    <div className="font-bold text-sm text-ink line-clamp-1">{c.title}</div>
+                    <div className="font-bold text-sm text-ink line-clamp-1">{getLocalizedComplaintTitle(c, i18n.language)}</div>
                     <div className="text-[11px] text-muted font-mono mt-0.5">{c.id} &bull; {c.address}</div>
                   </td>
                   <td className="p-4">

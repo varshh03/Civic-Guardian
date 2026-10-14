@@ -29,9 +29,8 @@ import { StatusChip } from '../components/StatusChip';
 import { SeverityChip } from '../components/SeverityChip';
 import { AuthModal } from '../components/AuthModal';
 
-import tnLogo from '../assets/tn_logo.png';
-import karurLogo from '../assets/karur_logo.png';
-import karurBg from '../assets/karur_bg.png';
+import municipalLogo from '../assets/karur_logo.png';
+import heroBg from '../assets/karur_bg.png';
 import kpImg from '../assets/kp1.jpg';
 import cgLogo from '../assets/cg_logo.png';
 
@@ -101,7 +100,7 @@ export const Landing: React.FC = () => {
       if (item.language === 'ta' && item.text_original?.description) {
         return item.text_original.description;
       }
-      const loc = item.address ? `${item.address} பகுதியில் ` : 'கரூர் நகராட்சி பகுதியில் ';
+      const loc = item.address ? `${item.address} பகுதியில் ` : 'மாநகராட்சி பகுதியில் ';
       if (item.issue_type === 'pothole') {
         return `${loc}சாலையில் குழி ஏற்பட்டு போக்குவரத்து மற்றும் பாதசாரிகளுக்கு சிரமம் ஏற்பட்டுள்ளது. உடனடியாக தார் பூசி சரிசெய்யவும்.`;
       }
@@ -201,15 +200,9 @@ export const Landing: React.FC = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
             <img
-              src={tnLogo}
-              alt={t('landing.emblem_alt')}
-              className="h-16 w-auto object-contain flex-shrink-0 drop-shadow-xs"
-            />
-            <div className="h-12 w-[1px] bg-slate-200 hidden sm:block" />
-            <img
-              src={karurLogo}
+              src={municipalLogo}
               alt={t('landing.karur_logo_alt')}
-              className="h-14 w-auto object-contain flex-shrink-0 drop-shadow-xs"
+              className="h-16 w-auto object-contain flex-shrink-0 drop-shadow-xs"
             />
             <div className="flex flex-col">
               <span className="text-[11px] font-bold tracking-wider text-slate-500 uppercase">
@@ -309,7 +302,7 @@ export const Landing: React.FC = () => {
         <section className="relative min-h-[500px] lg:min-h-[540px] flex items-center overflow-hidden border-b border-slate-300">
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-700"
-            style={{ backgroundImage: `url(${karurBg})` }}
+            style={{ backgroundImage: `url(${heroBg})` }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/80 to-slate-900/40" />
 
@@ -450,7 +443,7 @@ export const Landing: React.FC = () => {
                   {lang === 'ta' ? 'உதவி மையம் & தொடர்பு' : 'Citizen Helpline & Desk'}
                 </h3>
                 <p className="text-[11px] text-slate-500 mt-1 leading-snug">
-                  {lang === 'ta' ? 'கரூர் மாநகராட்சி நேரடி உதவி மையம்' : 'Karur Municipal administration desk'}
+                  {lang === 'ta' ? 'மாநகராட்சி நேரடி உதவி மையம்' : 'Municipal administration desk'}
                 </p>
               </div>
             </a>
@@ -461,7 +454,7 @@ export const Landing: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="space-y-4">
               <span className="text-slate-600 font-bold text-xs uppercase tracking-wider bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-                {lang === 'ta' ? 'கரூர் மாநகராட்சி' : 'CIVIC ADMINISTRATION'}
+                {lang === 'ta' ? 'மாநகராட்சி நிர்வாகம்' : 'CIVIC ADMINISTRATION'}
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight">
                 {t('landing.about_title')}
@@ -494,13 +487,12 @@ export const Landing: React.FC = () => {
             <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md relative group bg-white">
               <img
                 src={kpImg}
-                alt={lang === 'ta' ? 'அருள்மிகு கல்யாண பசுபதீஸ்வரர் திருக்கோவில், கரூர்' : 'Arulmigu Kalyana Pasupatheeswarar Temple, Karur'}
+                alt={lang === 'ta' ? 'மாநகராட்சி' : 'City Municipal Corporation'}
                 className="w-full h-84 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent flex items-end p-6">
                 <div className="text-white">
-                  <p className="font-extrabold text-sm">{lang === 'ta' ? 'அருள்மிகு கல்யாண பசுபதீஸ்வரர் திருக்கோவில்' : 'Arulmigu Kalyana Pasupatheeswarar Temple'}</p>
-                  <p className="text-[11px] text-slate-300">{lang === 'ta' ? 'கரூர் மாநகரின் வரலாற்று ஆன்மீகப் பெருமை' : 'Spiritual and Cultural Heritage of Karur'}</p>
+                  <p className="font-extrabold text-base">{lang === 'ta' ? 'மாநகராட்சி' : 'City Municipal Corporation'}</p>
                 </div>
               </div>
             </div>
@@ -922,11 +914,11 @@ export const Landing: React.FC = () => {
                     04323 222 951
                   </p>
                   <p className="text-xs text-slate-500 mt-2">
-                    {lang === 'ta' ? 'கரூர் மாநகராட்சி அலுவலக நேரடி தொடர்பு எண்' : 'Karur City Municipal Corporation direct contact line'}
+                    {lang === 'ta' ? 'மாநகராட்சி அலுவலக நேரடி தொடர்பு எண்' : 'City Municipal Corporation direct contact line'}
                   </p>
                 </div>
                 <div className="pt-4 border-t border-slate-100 mt-4 text-[11px] text-slate-400">
-                  {lang === 'ta' ? 'கரூர் மாநகராட்சி கட்டுப்பாட்டு மையம்' : 'Karur Central Administrative Desk'}
+                  {lang === 'ta' ? 'மாநகராட்சி கட்டுப்பாட்டு மையம்' : 'Central Administrative Desk'}
                 </div>
               </div>
 
@@ -980,8 +972,7 @@ export const Landing: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-3">
               <div className="flex items-center gap-3">
-                <img src={tnLogo} alt={t('landing.emblem_alt')} className="h-12 w-auto object-contain" />
-                <img src={karurLogo} alt={t('landing.karur_logo_alt')} className="h-10 w-auto object-contain" />
+                <img src={municipalLogo} alt={t('landing.karur_logo_alt')} className="h-10 w-auto object-contain" />
               </div>
               <h4 className="font-bold text-white text-sm">
                 {t('landing.karur_mc')}
@@ -1048,7 +1039,7 @@ export const Landing: React.FC = () => {
             <p className="flex items-center gap-1.5">
               <span>{t('landing.civic_guardian')}</span>
               <span>•</span>
-              <span>Karur Municipality AI Portal</span>
+              <span>{lang === 'ta' ? 'மாநகராட்சி AI தளம்' : 'Municipal AI Portal'}</span>
             </p>
           </div>
         </div>

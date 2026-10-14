@@ -29,13 +29,27 @@ export interface AddressSuggestion {
   lng: number;
 }
 
-export async function reverseGeocode(lat: number, lng: number): Promise<string> {
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
+export async function reverseGeocode(lat: number, lng: number, lang?: string): Promise<string> {
+  const activeLang = lang || localStorage.getItem('civic_lang') || 'ta';
+  try {
+    const res = await fetch(`${API_BASE}/geocode/reverse?lat=${lat}&lng=${lng}&lang=${activeLang}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (data?.address) {
+        return data.address;
+      }
+    }
+  } catch (err) {
+  }
+
   try {
     const res = await fetch(
       `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1`,
       {
         headers: {
-          'Accept-Language': 'en,ta',
+          'Accept-Language': activeLang === 'ta' ? 'ta,en' : 'en,ta',
         },
       }
     );
@@ -58,14 +72,25 @@ export async function reverseGeocode(lat: number, lng: number): Promise<string> 
     }
     return data.display_name || '';
   } catch (err) {
-    console.warn('Reverse geocode failed:', err);
     return '';
   }
 }
 
-export async function searchAddressSuggestions(query: string): Promise<AddressSuggestion[]> {
+export async function searchAddressSuggestions(query: string, lang?: string): Promise<AddressSuggestion[]> {
   const q = query.trim();
   if (!q || q.length < 2) return [];
+  const activeLang = lang || localStorage.getItem('civic_lang') || 'ta';
+
+  try {
+    const res = await fetch(`${API_BASE}/geocode/search?q=${encodeURIComponent(q)}&lang=${activeLang}`);
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data) && data.length > 0) {
+        return data;
+      }
+    }
+  } catch (err) {
+  }
 
   try {
     const encoded = encodeURIComponent(q);
@@ -73,7 +98,7 @@ export async function searchAddressSuggestions(query: string): Promise<AddressSu
       `https://nominatim.openstreetmap.org/search?format=json&q=${encoded}&addressdetails=1&limit=6&countrycodes=in`,
       {
         headers: {
-          'Accept-Language': 'en,ta',
+          'Accept-Language': activeLang === 'ta' ? 'ta,en' : 'en,ta',
         },
       }
     );
@@ -99,7 +124,6 @@ export async function searchAddressSuggestions(query: string): Promise<AddressSu
       };
     });
   } catch (err) {
-    console.warn('Search address suggestions failed:', err);
     return [];
   }
 }

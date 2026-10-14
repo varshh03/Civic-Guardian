@@ -12,15 +12,17 @@ export const Leaderboard = () => {
   const { data, isLoading } = useLeaderboard(period);
 
   const rawUsers = Array.isArray(data) ? data : data?.users || [];
-  const users = rawUsers.map((u: any) => ({
-    id: u.user_id || u.id,
-    name: u.name || 'Citizen',
-    points: u.points || 0,
-    badges: u.badges || [],
-    total_reports: u.total_reports || 0,
-    resolved_count: u.resolved_count || 0,
-    supports_received: u.supports_received || 0,
-  }));
+  const users = rawUsers
+    .map((u: any) => ({
+      id: u.user_id || u.id,
+      name: u.name || 'Citizen',
+      points: Number(u.points) || 0,
+      badges: u.badges || [],
+      total_reports: u.total_reports || 0,
+      resolved_count: u.resolved_count || 0,
+      supports_received: u.supports_received || 0,
+    }))
+    .sort((a: any, b: any) => (b.points - a.points) || (b.resolved_count - a.resolved_count) || (b.total_reports - a.total_reports));
 
   const topThree = users.slice(0, 3);
   const remaining = users.slice(3);
@@ -42,7 +44,7 @@ export const Leaderboard = () => {
               {t('nav.leaderboard') || 'Citizen Leaderboard'}
             </h1>
             <p className="text-xs text-muted">
-              {t('leaderboard.subtitle') || 'Top active citizens improving Karur municipality'}
+              {t('leaderboard.subtitle') || 'Top active citizens improving our municipality'}
             </p>
           </div>
         </div>

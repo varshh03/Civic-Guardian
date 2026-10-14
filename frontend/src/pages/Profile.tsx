@@ -40,7 +40,7 @@ export const Profile = () => {
         </button>
         <div>
           <h1 className="text-2xl font-bold text-ink">{t('nav.profile') || 'User Profile'}</h1>
-          <p className="text-xs text-muted">{t('app.municipality') || 'Karur Municipality'}</p>
+          <p className="text-xs text-muted">{t('app.municipality') || 'City Municipal Corporation'}</p>
         </div>
       </div>
 

@@ -156,8 +156,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">
               {lang === 'ta'
-                ? 'கரூர் மாநகராட்சி • செயல் காவலர்'
-                : 'Karur City Municipal Corporation • Civic Guardian'}
+                ? 'மாநகராட்சி • செயல் காவலர்'
+                : 'City Municipal Corporation • Civic Guardian'}
             </p>
 
             {!isForgotView && (
@@ -236,7 +236,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                           required
                           value={forgotEmail}
                           onChange={(e) => setForgotEmail(e.target.value)}
-                          placeholder="citizen@karur.gov.in"
+                          placeholder="citizen@city.gov.in"
                           className="input w-full pl-9 text-sm"
                         />
                       </div>

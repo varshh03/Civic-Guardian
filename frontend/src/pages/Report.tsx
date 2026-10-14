@@ -22,7 +22,7 @@ const markerIcon = L.icon({
 const MapController = ({ center }: { center: [number, number] }) => {
   const map = useMap();
   useEffect(() => {
-    map.flyTo(center, Math.max(map.getZoom(), 15), { animate: true });
+    map.flyTo(center, Math.max(map.getZoom(), 16), { animate: true });
   }, [center, map]);
   return null;
 };
@@ -94,14 +94,14 @@ export const Report = () => {
 
     const timer = setTimeout(async () => {
       setIsSearching(true);
-      const results = await searchAddressSuggestions(searchQuery);
+      const results = await searchAddressSuggestions(searchQuery, i18n.language);
       setSuggestions(results);
       setIsSearching(false);
       setShowSuggestions(results.length > 0);
     }, 350);
 
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, i18n.language]);
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -116,13 +116,13 @@ export const Report = () => {
   const handleMapLocationChange = useCallback(async (newPos: [number, number]) => {
     setPos(newPos);
     setIsGeocoding(true);
-    const resolvedAddress = await reverseGeocode(newPos[0], newPos[1]);
+    const resolvedAddress = await reverseGeocode(newPos[0], newPos[1], i18n.language);
     setIsGeocoding(false);
     if (resolvedAddress) {
       setAddress(resolvedAddress);
       setSearchQuery(resolvedAddress);
     }
-  }, []);
+  }, [i18n.language]);
 
   const handleUseCurrentGPS = async () => {
     setIsLocatingGPS(true);
@@ -133,7 +133,7 @@ export const Report = () => {
       toast.success(t('report.use_gps') || 'GPS location acquired!');
       
       setIsGeocoding(true);
-      const resolvedAddress = await reverseGeocode(newPos[0], newPos[1]);
+      const resolvedAddress = await reverseGeocode(newPos[0], newPos[1], i18n.language);
       setIsGeocoding(false);
       if (resolvedAddress) {
         setAddress(resolvedAddress);
@@ -237,7 +237,7 @@ export const Report = () => {
     fd.append('severity', aiData.severity || 'Medium');
     fd.append('severity_reason', aiData.severity_reason || '');
     fd.append('title', title || (i18n.language === 'ta' ? 'புகார் அளிக்கப்பட்டது' : 'Civic Issue Reported'));
-    fd.append('description', desc || (i18n.language === 'ta' ? 'கரூர் நகராட்சியில் புகார் பதிவு செய்யப்பட்டது.' : 'Issue reported at Karur.'));
+    fd.append('description', desc || (i18n.language === 'ta' ? 'மாநகராட்சியில் புகார் பதிவு செய்யப்பட்டது.' : 'Civic issue reported.'));
     fd.append('lat', pos[0].toString());
     fd.append('lng', pos[1].toString());
     fd.append('address', address || 'Karur');
@@ -499,7 +499,7 @@ export const Report = () => {
 
             <div className="relative">
               <div className="h-72 rounded-xl overflow-hidden border border-line z-0 shadow-inner">
-                <MapContainer center={pos} zoom={15} style={{ height: '100%', width: '100%' }}>
+                <MapContainer center={pos} zoom={16} style={{ height: '100%', width: '100%' }}>
                   <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'

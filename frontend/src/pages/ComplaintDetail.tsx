@@ -15,6 +15,7 @@ import { formatRelativeTime } from '../lib/utils';
 import { Share2, MapPin, AlertTriangle, CheckCircle, ArrowLeft, Loader2, Sparkles } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { getLocalizedComplaintTitle, getLocalizedComplaintDesc } from '../lib/localizeComplaint';
 import toast from 'react-hot-toast';
 
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
@@ -76,11 +77,11 @@ export const ComplaintDetail = () => {
 
   const displayTitle = showOriginal 
     ? (c.text_original?.title || c.title) 
-    : (c.language === i18n.language ? c.title : (c.text_en?.title || c.title));
+    : getLocalizedComplaintTitle(c, i18n.language);
 
   const displayDesc = showOriginal 
     ? (c.text_original?.description || c.description) 
-    : (c.language === i18n.language ? c.description : (c.text_en?.description || c.description));
+    : getLocalizedComplaintDesc(c, i18n.language);
 
   return (
     <div className="max-w-4xl mx-auto flex flex-col lg:flex-row gap-6 pb-20">
@@ -187,7 +188,7 @@ export const ComplaintDetail = () => {
             </MapContainer>
           </div>
           <div className="text-xs text-ink space-y-1">
-            <p className="font-semibold">{c.address || 'Karur Municipality'}</p>
+            <p className="font-semibold">{c.address || (t('app.municipality') || 'Municipal Corporation')}</p>
             <p className="text-muted text-[11px] font-mono">
               {c.lat.toFixed(5)}, {c.lng.toFixed(5)}
             </p>

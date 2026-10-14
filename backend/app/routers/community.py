@@ -38,18 +38,23 @@ async def leaderboard(period: str = Query("month")):
         total_resolved = sum(1 for c in user_complaints if c.status == "Resolved")
         total_supports = sum(len(c.upvotes) for c in user_complaints)
         
+        if period == "month":
+            points = (total_reports * 10) + (total_resolved * 20) + min(total_supports * 5, 50)
+        else:
+            points = max(user.points, (total_reports * 10) + (total_resolved * 20) + min(total_supports * 5, 50))
+        
         user_scores.append({
             "id": user.id,
             "user_id": user.id,
             "name": user.name,
-            "points": user.points,
+            "points": points,
             "badges": user.badges,
             "total_reports": total_reports,
             "resolved_count": total_resolved,
             "supports_received": total_supports,
         })
         
-    user_scores.sort(key=lambda x: x["points"], reverse=True)
+    user_scores.sort(key=lambda x: (x["points"], x["resolved_count"], x["total_reports"]), reverse=True)
     return {"period": period, "users": user_scores[:20]}
 
 @router.get("/users/{user_id}/public")

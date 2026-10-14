@@ -7,7 +7,6 @@ from pydantic import BaseModel
 T = TypeVar('T', bound=BaseModel)
 
 class JsonCollection(Generic[T]):
-    """Thread-safe JSON file collection with atomic writes."""
     def __init__(self, path: Path, model: Type[T]):
         self._path = path
         self._model = model
@@ -20,7 +19,6 @@ class JsonCollection(Generic[T]):
             return json.load(f)
     
     def _write_raw(self, data: list[dict]):
-        """Atomic write via temp file + replace."""
         tmp = self._path.with_suffix('.tmp')
         with open(tmp, 'w', encoding='utf-8') as f:
             json.dump(data, f, default=str, ensure_ascii=False, indent=2)
@@ -55,7 +53,6 @@ class JsonCollection(Generic[T]):
         return None
     
     def mutate(self, id: str, fn: Callable[[T], T]) -> T | None:
-        """Read-modify-write atomically."""
         with self._lock:
             data = self._read_raw()
             for i, d in enumerate(data):
@@ -113,7 +110,6 @@ class ComplaintRepo:
     def mutate(self, id: str, fn) -> Complaint | None: return self._col.mutate(id, fn)
     def filter(self, fn) -> list[Complaint]: return self._col.filter(fn)
     def next_id(self, year: int) -> str:
-        """Generate next KRR-YYYY-NNNNN id."""
         prefix = f"KRR-{year}-"
         existing = [c.id for c in self.all() if c.id.startswith(prefix)]
         max_num = max((int(c.split('-')[-1]) for c in existing), default=0)

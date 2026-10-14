@@ -9,7 +9,7 @@
     "department_id": null,
     "language": "en",
     "avatar": null,
-    "points": 0,
+    "points": 50,
     "badges": [],
     "active": true,
     "created_at": "2026-07-09 04:06:01.602624+00:00"
@@ -69,7 +69,7 @@
     "department_id": null,
     "language": "ta",
     "avatar": null,
-    "points": 85,
+    "points": 95,
     "badges": [
       "first_report",
       "road_warrior"
@@ -87,7 +87,7 @@
     "department_id": null,
     "language": "ta",
     "avatar": null,
-    "points": 75,
+    "points": 120,
     "badges": [
       "first_report",
       "water_guardian"
@@ -105,7 +105,7 @@
     "department_id": null,
     "language": "en",
     "avatar": null,
-    "points": 85,
+    "points": 150,
     "badges": [
       "first_report"
     ],
@@ -122,7 +122,7 @@
     "department_id": null,
     "language": "ta",
     "avatar": null,
-    "points": 30,
+    "points": 35,
     "badges": [
       "first_report"
     ],
@@ -139,7 +139,7 @@
     "department_id": null,
     "language": "en",
     "avatar": null,
-    "points": 25,
+    "points": 45,
     "badges": [
       "first_report"
     ],
@@ -156,7 +156,7 @@
     "department_id": null,
     "language": "ta",
     "avatar": null,
-    "points": 20,
+    "points": 65,
     "badges": [
       "first_report"
     ],
@@ -173,7 +173,7 @@
     "department_id": null,
     "language": "en",
     "avatar": null,
-    "points": 35,
+    "points": 55,
     "badges": [
       "first_report"
     ],
@@ -190,7 +190,7 @@
     "department_id": null,
     "language": "ta",
     "avatar": null,
-    "points": 10,
+    "points": 25,
     "badges": [],
     "active": true,
     "created_at": "2026-09-17T04:06:02.236572+00:00"
@@ -224,5 +224,35 @@
     "badges": [],
     "active": true,
     "created_at": "2026-10-13 08:17:36.745883+00:00"
+  },
+  {
+    "id": "dc86959f-1e43-4cab-86b4-77e9753bede0",
+    "name": "varshitha",
+    "email": "varsh@gmail.com",
+    "phone": "9876543210",
+    "password": "pbkdf2_sha256$100000$4bfd1bf61aea6d4574b20ef8e9fd0272$398f09b92a1e1a4a9c55cdf5c442a98a0133434b621db18c2393d67cb260559c",
+    "role": "citizen",
+    "department_id": null,
+    "language": "ta",
+    "avatar": null,
+    "points": 10,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-10-14 01:11:33.769504+00:00"
+  },
+  {
+    "id": "79a37c88-7ace-4202-8d9e-5b9c82579edf",
+    "name": "Dhisya",
+    "email": "dhisya@gmail.com",
+    "phone": "9342829367",
+    "password": "pbkdf2_sha256$100000$3940f7c23b8cf212de53b7b3e24258eb$7a1c5ef83d9125e127187774f7dec1727f0e4881411bbd4b7dcfead275f7bb60",
+    "role": "citizen",
+    "department_id": null,
+    "language": "en",
+    "avatar": null,
+    "points": 0,
+    "badges": [],
+    "active": true,
+    "created_at": "2026-10-14 03:51:18.272222+00:00"
   }
 ]

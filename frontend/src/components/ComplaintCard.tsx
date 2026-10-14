@@ -8,6 +8,7 @@ import { useUpvote } from '../api/hooks';
 import { useAuth } from '../context/AuthContext';
 import { formatRelativeTime } from '../lib/utils';
 import { useTranslation } from 'react-i18next';
+import { getLocalizedComplaintTitle } from '../lib/localizeComplaint';
 
 interface Complaint {
   id: string;
@@ -30,13 +31,15 @@ export const ComplaintCard = ({ complaint, showUpvote = true }: { complaint: Com
   const { t, i18n } = useTranslation();
   const upvoteMutation = useUpvote(complaint.id);
 
+  const displayTitle = getLocalizedComplaintTitle(complaint, i18n.language);
+
   return (
     <div className="card p-4 flex gap-3 hover:shadow-card-hover transition-shadow">
       <Link to={`/complaints/${complaint.id}`} className="flex-shrink-0">
         <div className="w-20 h-20 rounded-lg overflow-hidden bg-slate-blue-50">
           <img
             src={`${API_BASE}/uploads/${complaint.image}`}
-            alt={complaint.title}
+            alt={displayTitle}
             className="w-full h-full object-cover"
             onError={(e) => {
               e.currentTarget.src = `https://placehold.co/80x80/E4EAF4/4A6491?text=${complaint.issue_type.charAt(0).toUpperCase()}`;
@@ -59,7 +62,7 @@ export const ComplaintCard = ({ complaint, showUpvote = true }: { complaint: Com
         </div>
 
         <Link to={`/complaints/${complaint.id}`}>
-          <h3 className="font-semibold text-sm text-ink mt-1 line-clamp-2 hover:text-slate-blue-600 transition-colors">{complaint.title}</h3>
+          <h3 className="font-semibold text-sm text-ink mt-1 line-clamp-2 hover:text-slate-blue-600 transition-colors">{displayTitle}</h3>
         </Link>
 
         <div className="flex items-center gap-1 mt-1 text-xs text-muted">

@@ -5,14 +5,14 @@ from pathlib import Path
 import os
 
 from app.config import get_settings
-from app.routers import auth, detect, complaints, comments, social, notifications, officer, admin, community
+from app.routers import auth, detect, complaints, comments, social, notifications, officer, admin, community, geocode
 
 def create_app() -> FastAPI:
     settings = get_settings()
     
     app = FastAPI(
         title="AI Civic Guardian API",
-        description="Bilingual civic issue reporting for Karur Municipality",
+        description="Bilingual civic issue reporting for City Municipal Corporation",
         version="1.0.0"
     )
     
@@ -38,6 +38,7 @@ def create_app() -> FastAPI:
     app.include_router(admin.router, prefix="/admin", tags=["admin"])
     app.include_router(community.router, tags=["community"])
     app.include_router(community.router, prefix="/community", tags=["community"])
+    app.include_router(geocode.router)
     
     @app.get("/health")
     async def health():

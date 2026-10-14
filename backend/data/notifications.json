@@ -179,5 +179,33 @@
     },
     "read": false,
     "created_at": "2026-10-13 05:37:59.512965+00:00"
+  },
+  {
+    "id": "ac903630-47f1-4eec-a504-ff81103b47d6",
+    "user_id": "usr-admin-001",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00056",
+    "actor_id": "usr-off-elec",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "In Progress",
+      "id": "KRR-2026-00056"
+    },
+    "read": false,
+    "created_at": "2026-10-14 06:23:15.972700+00:00"
+  },
+  {
+    "id": "2c815251-f301-4cb6-bda6-b3793497b811",
+    "user_id": "usr-admin-001",
+    "type": "status_changed",
+    "complaint_id": "KRR-2026-00056",
+    "actor_id": "usr-off-elec",
+    "message_key": "notification.status_changed",
+    "params": {
+      "status": "Resolved",
+      "id": "KRR-2026-00056"
+    },
+    "read": false,
+    "created_at": "2026-10-14 06:23:29.119651+00:00"
   }
 ]

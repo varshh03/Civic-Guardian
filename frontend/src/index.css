@@ -49,30 +49,24 @@
   }
 }
 
-/* Severity colors */
 .severity-low { @apply bg-emerald-50 text-emerald-700; }
 .severity-medium { @apply bg-amber-50 text-amber-700; }
 .severity-high { @apply bg-red-50 text-red-700; }
 
-/* Status colors */
 .status-submitted { @apply bg-slate-50 text-slate-700; }
 .status-acknowledged { @apply bg-blue-50 text-blue-700; }
 .status-in-progress { @apply bg-violet-50 text-violet-700; }
 .status-resolved { @apply bg-emerald-50 text-emerald-700; }
 .status-rejected { @apply bg-red-50 text-red-700; }
 
-/* Leaflet overrides */
 .leaflet-container { border-radius: 12px; }
 
-/* Focus visible */
 *:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
 
-/* Skeleton */
 .skeleton {
   @apply animate-pulse bg-slate-100 rounded;
 }
 
-/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

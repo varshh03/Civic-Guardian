@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import { apiClient } from '../api/client';
+import i18n from '../i18n';
 
 export interface User {
   id: string;
@@ -35,6 +36,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isLoading, setIsLoading] = useState(!!token && !user);
 
   useEffect(() => {
+    const activeLang = localStorage.getItem('civic_lang') || 'ta';
+    i18n.changeLanguage(activeLang);
     if (token && !user) {
       apiClient.get('/auth/me').then(r => {
         setUser(r.data);
@@ -50,9 +53,9 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(newUser);
     localStorage.setItem('civic_token', newToken);
     localStorage.setItem('civic_user', JSON.stringify(newUser));
-    if (newUser.language) {
-      localStorage.setItem('civic_lang', newUser.language);
-    }
+    const activeLang = localStorage.getItem('civic_lang') || newUser.language || 'ta';
+    localStorage.setItem('civic_lang', activeLang);
+    i18n.changeLanguage(activeLang);
   };
 
   const logout = () => {

@@ -103,5 +103,40 @@
     "type": "report",
     "complaint_id": "KRR-2026-00053",
     "created_at": "2026-10-13 15:28:05.567583+00:00"
+  },
+  {
+    "id": "0e586716-d95f-43c1-919d-936adcbeac19",
+    "user_id": "usr-cit-002",
+    "type": "report",
+    "complaint_id": "KRR-2026-00054",
+    "created_at": "2026-10-13 16:12:10.669816+00:00"
+  },
+  {
+    "id": "a255d35d-b54a-46e5-8a59-e26959a2744b",
+    "user_id": "dc86959f-1e43-4cab-86b4-77e9753bede0",
+    "type": "report",
+    "complaint_id": "KRR-2026-00055",
+    "created_at": "2026-10-14 01:14:31.980840+00:00"
+  },
+  {
+    "id": "fa879577-6c88-49bb-b286-744a18bedbba",
+    "user_id": "usr-admin-001",
+    "type": "report",
+    "complaint_id": "KRR-2026-00056",
+    "created_at": "2026-10-14 06:17:36.257127+00:00"
+  },
+  {
+    "id": "e3b51eef-802a-4fcd-95b3-8a7fbc49e688",
+    "user_id": "usr-admin-001",
+    "type": "report",
+    "complaint_id": "KRR-2026-00057",
+    "created_at": "2026-10-14 07:57:15.910417+00:00"
+  },
+  {
+    "id": "7f5bb65a-39ca-4dfb-a4a9-a760c8a43926",
+    "user_id": "usr-admin-001",
+    "type": "report",
+    "complaint_id": "KRR-2026-00058",
+    "created_at": "2026-10-14 08:05:39.569146+00:00"
   }
 ]

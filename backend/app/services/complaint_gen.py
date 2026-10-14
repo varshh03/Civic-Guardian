@@ -99,8 +99,8 @@ async def generate_draft(issue_type: str, severity: str, address: str, lang: str
         return _template_draft(issue_type, severity, address, lang)
     try:
         lang_name = "Tamil" if lang == "ta" else "English"
-        location_ctx = f" at {address}" if address else " in Karur Municipality"
-        prompt = f"""You are an AI assistant for Karur Municipality Civic Guardian.
+        location_ctx = f" at {address}" if address else " in the municipal area"
+        prompt = f"""You are an AI assistant for City Municipal Corporation Civic Guardian.
 Generate an official, precise civic complaint title (max 12 words) and descriptive explanation (max 45 words) in {lang_name}.
 Issue Category: {issue_type.replace('_', ' ')}
 Severity: {severity}
