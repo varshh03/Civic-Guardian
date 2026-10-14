@@ -1325,5 +1325,55 @@
     "created_at": "2026-10-14 08:05:39.569146+00:00",
     "updated_at": "2026-10-14 08:06:14.777096+00:00",
     "resolved_at": null
+  },
+  {
+    "id": "KRR-2026-00059",
+    "user_id": "usr-cit-002",
+    "issue_type": "streetlight",
+    "severity": "Medium",
+    "severity_reason": "severity.reason.streetlight_faulty",
+    "title": "Dim streetlight causing safety concerns on Main Street",
+    "description": "The streetlight on Main Street near the municipal office is malfunctioning, emitting insufficient illumination after dusk, creating safety hazards for pedestrians and vehicles. Prompt repair or replacement is required to restore adequate lighting.",
+    "language": "en",
+    "text_original": {
+      "title": "Dim streetlight causing safety concerns on Main Street",
+      "description": "The streetlight on Main Street near the municipal office is malfunctioning, emitting insufficient illumination after dusk, creating safety hazards for pedestrians and vehicles. Prompt repair or replacement is required to restore adequate lighting."
+    },
+    "text_en": {
+      "title": "Dim streetlight causing safety concerns on Main Street",
+      "description": "The streetlight on Main Street near the municipal office is malfunctioning, emitting insufficient illumination after dusk, creating safety hazards for pedestrians and vehicles. Prompt repair or replacement is required to restore adequate lighting."
+    },
+    "image": "befc99ce-9d22-4fd9-bf4e-b2233f4bb732.jpg",
+    "resolution_image": null,
+    "lat": 10.960302881672241,
+    "lng": 78.07880855144647,
+    "address": "Sri Kalyana Pasupatheeswarar Temple, Karur - 639001",
+    "location_source": "manual",
+    "main_road": false,
+    "department_id": "dept-electric",
+    "status": "Submitted",
+    "history": [
+      {
+        "status": "Submitted",
+        "at": "2026-10-14 13:58:52.246078+00:00",
+        "by": "usr-cit-002",
+        "note": ""
+      }
+    ],
+    "upvotes": [],
+    "followers": [],
+    "ai_issue_type": "streetlight",
+    "ai_confidence": 0.88,
+    "detector_mode": "ai_vision",
+    "verification": {
+      "ai_confidence": 0.88,
+      "exif_gps_match": null,
+      "duplicate_checked": true,
+      "needs_review": false
+    },
+    "duplicate_of": null,
+    "created_at": "2026-10-14 13:58:52.246078+00:00",
+    "updated_at": "2026-10-14 13:58:52.246078+00:00",
+    "resolved_at": null
   }
 ]

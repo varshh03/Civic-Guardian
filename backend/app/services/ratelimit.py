@@ -19,5 +19,5 @@ class RateLimiter:
             self._store[key].append(now)
             return True
 
-auth_limiter = RateLimiter(max_requests=20, window_seconds=3600)
-report_limiter = RateLimiter(max_requests=10, window_seconds=3600)
+auth_limiter = RateLimiter(max_requests=500, window_seconds=3600)
+report_limiter = RateLimiter(max_requests=100, window_seconds=3600)

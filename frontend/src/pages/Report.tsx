@@ -19,11 +19,26 @@ const markerIcon = L.icon({
   iconAnchor: [12, 41]
 });
 
-const MapController = ({ center }: { center: [number, number] }) => {
+const MapController = ({ centerTarget }: { centerTarget: [number, number] | null }) => {
   const map = useMap();
+
   useEffect(() => {
-    map.flyTo(center, Math.max(map.getZoom(), 16), { animate: true });
-  }, [center, map]);
+    // Invalidate map size on mount so Leaflet computes exact container dimensions
+    map.invalidateSize();
+    const t1 = setTimeout(() => map.invalidateSize(), 150);
+    const t2 = setTimeout(() => map.invalidateSize(), 400);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [map]);
+
+  useEffect(() => {
+    if (centerTarget) {
+      map.flyTo(centerTarget, Math.max(map.getZoom(), 16), { animate: true, duration: 0.8 });
+    }
+  }, [centerTarget, map]);
+
   return null;
 };
 
@@ -73,6 +88,7 @@ export const Report = () => {
   const [title, setTitle] = useState('');
   const [desc, setDesc] = useState('');
   const [pos, setPos] = useState<[number, number]>(KARUR_CENTER);
+  const [centerTarget, setCenterTarget] = useState<[number, number] | null>(null);
   const [address, setAddress] = useState('');
   const [mainRoad, setMainRoad] = useState(false);
   const [duplicateData, setDuplicateData] = useState<any>(null);
@@ -113,14 +129,19 @@ export const Report = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const geocodeSeqRef = useRef(0);
+
   const handleMapLocationChange = useCallback(async (newPos: [number, number]) => {
     setPos(newPos);
     setIsGeocoding(true);
+    const seq = ++geocodeSeqRef.current;
     const resolvedAddress = await reverseGeocode(newPos[0], newPos[1], i18n.language);
-    setIsGeocoding(false);
-    if (resolvedAddress) {
-      setAddress(resolvedAddress);
-      setSearchQuery(resolvedAddress);
+    if (seq === geocodeSeqRef.current) {
+      setIsGeocoding(false);
+      if (resolvedAddress) {
+        setAddress(resolvedAddress);
+        setSearchQuery(resolvedAddress);
+      }
     }
   }, [i18n.language]);
 
@@ -130,14 +151,18 @@ export const Report = () => {
       const position = await getCurrentPosition();
       const newPos: [number, number] = [position.coords.latitude, position.coords.longitude];
       setPos(newPos);
+      setCenterTarget(newPos);
       toast.success(t('report.use_gps') || 'GPS location acquired!');
       
       setIsGeocoding(true);
+      const seq = ++geocodeSeqRef.current;
       const resolvedAddress = await reverseGeocode(newPos[0], newPos[1], i18n.language);
-      setIsGeocoding(false);
-      if (resolvedAddress) {
-        setAddress(resolvedAddress);
-        setSearchQuery(resolvedAddress);
+      if (seq === geocodeSeqRef.current) {
+        setIsGeocoding(false);
+        if (resolvedAddress) {
+          setAddress(resolvedAddress);
+          setSearchQuery(resolvedAddress);
+        }
       }
     } catch (err: any) {
       toast.error(err?.message || 'Unable to access your GPS location. Please check browser permissions.');
@@ -149,6 +174,7 @@ export const Report = () => {
   const handleSelectSuggestion = (suggestion: AddressSuggestion) => {
     const newPos: [number, number] = [suggestion.lat, suggestion.lng];
     setPos(newPos);
+    setCenterTarget(newPos);
     setAddress(suggestion.formattedAddress);
     setSearchQuery(suggestion.formattedAddress);
     setShowSuggestions(false);
@@ -186,23 +212,24 @@ export const Report = () => {
         }
       },
       onError: () => {
-        toast.error('AI Detection failed. Please upload a clear photo.');
+        toast.error(i18n.language === 'ta' ? 'AI பகுப்பாய்வு தோல்வியடைந்தது. தெளிவான புகைப்படத்தை மீண்டும் பதிவேற்றவும்.' : 'AI Analysis failed. Please upload a clear photo.');
         setAiData({ 
-          image: 'demo_pothole_01.jpg',
-          is_valid: true,
-          ai_issue_type: 'pothole', 
-          issue_type: 'pothole',
-          confidence: 0.75, 
-          severity: 'Medium', 
-          severity_reason: 'severity.reason.moderate_pothole', 
-          department_id: 'dept-roads', 
-          department: { name_en: 'Highways & Roads', name_ta: 'நெடுஞ்சாலை மற்றும் சாலைகள்' },
-          detector_mode: 'stub',
-          title: i18n.language === 'ta' ? 'சாலை சேதம் புகாரளிக்கப்பட்டது' : 'Road Damage Reported',
-          description: i18n.language === 'ta' ? 'குறிப்பிட்ட இடத்தில் சாலை சேதம் கண்டறியப்பட்டது. உடனடி சீரமைப்பு கோரப்படுகிறது.' : 'Road damage has been detected at the specified location. Urgent repair requested.'
+          image: '',
+          is_valid: false,
+          ai_issue_type: 'invalid', 
+          issue_type: 'invalid',
+          confidence: 0.0, 
+          severity: 'Low', 
+          severity_reason: '', 
+          department_id: '', 
+          department: null,
+          detector_mode: 'error',
+          reason: i18n.language === 'ta' 
+            ? 'புகைப்படத்தை ஆய்வு செய்ய முடியவில்லை. தயவுசெய்து பொது சாலை, குடிநீர் குழாய் அல்லது தெருவிளக்கின் தெளிவான புகைப்படத்தை பதிவேற்றவும்.' 
+            : 'AI Inspection could not analyze the image. Please upload a clear photo of public road damage, water pipeline leaks, or municipal streetlights.'
         });
-        setTitle(i18n.language === 'ta' ? 'சாலை சேதம் புகாரளிக்கப்பட்டது' : 'Road Damage Reported');
-        setDesc(i18n.language === 'ta' ? 'குறிப்பிட்ட இடத்தில் சாலை சேதம் கண்டறியப்பட்டது. உடனடி சீரமைப்பு கோரப்படுகிறது.' : 'Road damage has been detected at the specified location. Urgent repair requested.');
+        setTitle('');
+        setDesc('');
       }
     });
   };
@@ -394,7 +421,12 @@ export const Report = () => {
               </button>
             ) : (
               <button
-                onClick={() => setStep(3)}
+                onClick={() => {
+                  setStep(3);
+                  if (!address) {
+                    handleMapLocationChange(pos);
+                  }
+                }}
                 disabled={!aiData || aiData.is_valid === false || aiData.issue_type === 'invalid'}
                 className="btn-primary h-11 px-8 text-sm font-semibold shadow-sm"
               >
@@ -504,7 +536,7 @@ export const Report = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                   />
-                  <MapController center={pos} />
+                  <MapController centerTarget={centerTarget} />
                   <LocationPicker pos={pos} onLocationChange={handleMapLocationChange} />
                 </MapContainer>
               </div>

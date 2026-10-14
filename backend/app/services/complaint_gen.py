@@ -116,6 +116,7 @@ Return valid JSON with keys:
                 headers={"Authorization": f"Bearer {settings.openrouter_api_key}"},
                 json={
                     "model": settings.openrouter_model,
+                    "max_tokens": 300,
                     "messages": [{"role": "user", "content": prompt}],
                     "response_format": {"type": "json_object"}
                 }
@@ -167,6 +168,7 @@ async def translate_to_english(title: str, description: str, source_lang: str = 
                 headers={"Authorization": f"Bearer {settings.openrouter_api_key}"},
                 json={
                     "model": settings.openrouter_model,
+                    "max_tokens": 300,
                     "messages": [{"role": "user", "content": prompt}],
                     "response_format": {"type": "json_object"}
                 }

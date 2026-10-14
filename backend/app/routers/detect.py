@@ -77,7 +77,7 @@ async def detect_issue(
             "draft_source": "ai",
             "needs_manual_category": True,
             "reason": result.reason or "This issue cannot be acknowledged because Civic Guardian is currently designed specifically for Roads, Water Supply, and Streetlight issues.",
-            "message": "This issue cannot be acknowledged because Civic Guardian is currently designed specifically for Roads, Water Supply, and Streetlight issues.",
+            "message": result.reason or "This issue cannot be acknowledged because Civic Guardian is currently designed specifically for Roads, Water Supply, and Streetlight issues.",
             "message_ta": "இந்த புகாரை ஏற்க முடியாது, ஏனெனில் சிவிக் கார்டியன் தற்போது சாலைகள், குடிநீர் வழங்கல் மற்றும் தெருவிளக்கு பிரச்சினைகளுக்காக மட்டுமே வடிவமைக்கப்பட்டுள்ளது."
         }
 

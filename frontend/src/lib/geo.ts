@@ -59,18 +59,26 @@ export async function reverseGeocode(lat: number, lng: number, lang?: string): P
 
     if (data.address) {
       const addr = data.address;
-      const parts = [
-        addr.road || addr.pedestrian || addr.street || addr.footway || addr.path || addr.amenity,
-        addr.neighbourhood || addr.suburb || addr.residential || addr.commercial || addr.quarter,
-        addr.village || addr.town || addr.city_district || addr.city || 'Karur',
-        addr.postcode,
-      ].filter(Boolean);
+      const point = addr.amenity || addr.building || addr.shop || addr.office || addr.tourism || addr.leisure || '';
+      const road = addr.road || addr.pedestrian || addr.street || addr.footway || addr.path || addr.alley || '';
+      const house = addr.house_number || '';
+      const roadStr = house && road ? `${house}, ${road}` : road;
+      const area = addr.suburb || addr.neighbourhood || addr.residential || addr.commercial || addr.village || addr.hamlet || addr.quarter || '';
+      const city = addr.city || addr.town || addr.city_district || addr.municipality || addr.county || '';
+      const pin = addr.postcode || '';
 
+      const parts = [point, roadStr, area, city].filter((p, idx, arr) => Boolean(p) && arr.indexOf(p) === idx);
       if (parts.length > 0) {
-        return parts.join(', ');
+        let formatted = parts.join(', ');
+        if (pin && !formatted.includes(pin)) formatted += ` - ${pin}`;
+        return formatted;
       }
     }
-    return data.display_name || '';
+    if (data.display_name) {
+      const parts = data.display_name.split(',').map((p: string) => p.trim()).filter((p: string) => !['india', 'இந்தியா', 'இந்திய'].includes(p.toLowerCase()));
+      return parts.join(', ');
+    }
+    return '';
   } catch (err) {
     return '';
   }

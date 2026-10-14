@@ -2,6 +2,7 @@ import math
 import urllib.request
 import urllib.parse
 import json
+import httpx
 from fastapi import APIRouter, Query
 
 router = APIRouter(prefix="/geocode", tags=["geocode"])
@@ -268,6 +269,84 @@ def find_nearest_landmark(lat: float, lng: float):
 
 _cache = {}
 
+def format_exact_address(data: dict, lang: str = "en") -> str:
+    if not data:
+        return ""
+    addr = data.get("address", {})
+    if not addr:
+        display = data.get("display_name", "")
+        if display:
+            dp = [p.strip() for p in display.split(",") if p.strip().lower() not in ["india", "இந்தியா", "இந்திய"]]
+            return ", ".join(dp)
+        return ""
+
+    point = (
+        addr.get("amenity")
+        or addr.get("building")
+        or addr.get("shop")
+        or addr.get("office")
+        or addr.get("tourism")
+        or addr.get("leisure")
+        or addr.get("historic")
+        or addr.get("craft")
+        or addr.get("emergency")
+        or ""
+    )
+
+    road = (
+        addr.get("road")
+        or addr.get("street")
+        or addr.get("pedestrian")
+        or addr.get("footway")
+        or addr.get("path")
+        or addr.get("alley")
+        or addr.get("cycleway")
+        or ""
+    )
+    house = addr.get("house_number") or ""
+    road_part = f"{house}, {road}" if (house and road) else road
+
+    area = (
+        addr.get("suburb")
+        or addr.get("neighbourhood")
+        or addr.get("residential")
+        or addr.get("commercial")
+        or addr.get("industrial")
+        or addr.get("quarter")
+        or addr.get("village")
+        or addr.get("hamlet")
+        or ""
+    )
+
+    city = (
+        addr.get("city")
+        or addr.get("town")
+        or addr.get("city_district")
+        or addr.get("municipality")
+        or addr.get("county")
+        or ""
+    )
+
+    pin = addr.get("postcode") or ""
+
+    parts = []
+    for item in [point, road_part, area, city]:
+        item_clean = item.strip()
+        if item_clean and item_clean not in parts:
+            parts.append(item_clean)
+
+    if parts:
+        formatted = ", ".join(parts)
+        if pin and pin not in formatted:
+            formatted += f" - {pin}"
+        return formatted
+
+    display = data.get("display_name", "")
+    if display:
+        dp = [p.strip() for p in display.split(",") if p.strip().lower() not in ["india", "இந்தியா", "இந்திய"]]
+        return ", ".join(dp)
+    return ""
+
 @router.get("/reverse")
 def reverse_geocode(lat: float = Query(...), lng: float = Query(...), lang: str = Query("ta")):
     cache_key = f"{round(lat, 5)}_{round(lng, 5)}_{lang}"
@@ -275,63 +354,56 @@ def reverse_geocode(lat: float = Query(...), lng: float = Query(...), lang: str 
         return _cache[cache_key]
 
     nearest_lm, dist_m = find_nearest_landmark(lat, lng)
+    ward = nearest_lm["ward"] if (nearest_lm and dist_m < 2500) else None
 
-    osm_road = ""
-    osm_suburb = ""
-    osm_postcode = "639001"
+    osm_data = None
     try:
         url = f"https://nominatim.openstreetmap.org/reverse?format=json&lat={lat}&lon={lng}&zoom=18&addressdetails=1"
         req = urllib.request.Request(
             url,
             headers={
                 "User-Agent": "KarurCivicGuardian/1.0 (commr.karur@tn.gov.in)",
-                "Accept-Language": "ta,en" if lang == "ta" else "en,ta"
+                "Accept-Language": f"{lang},en"
             }
         )
-        with urllib.request.urlopen(req, timeout=3.5) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-            addr = data.get("address", {})
-            osm_road = addr.get("road") or addr.get("pedestrian") or addr.get("street") or addr.get("amenity") or ""
-            osm_suburb = addr.get("suburb") or addr.get("neighbourhood") or addr.get("residential") or ""
-            osm_postcode = addr.get("postcode") or "639001"
+        with urllib.request.urlopen(req, timeout=4.5) as resp:
+            osm_data = json.loads(resp.read().decode('utf-8'))
     except Exception:
         pass
 
-    pin = osm_postcode or (nearest_lm["pin"] if nearest_lm else "639001")
-    ward = nearest_lm["ward"] if nearest_lm else 10
+    loc = format_exact_address(osm_data, lang)
 
-    if lang == "ta":
-        if dist_m < 250:
-            road = nearest_lm["road_ta"]
-            loc = f"{nearest_lm['name_ta']} அருகில், {road}, வார்டு {ward}, கரூர் - {pin}"
-        elif dist_m < 800:
-            road = osm_road or nearest_lm["road_ta"]
-            loc = f"{road}, {nearest_lm['area_ta']}, வார்டு {ward}, கரூர் - {pin}"
+    pin = "639001"
+    if osm_data and osm_data.get("address"):
+        pin = osm_data["address"].get("postcode") or (nearest_lm["pin"] if nearest_lm else "639001")
+    elif nearest_lm:
+        pin = nearest_lm["pin"]
+
+    # Fallback only when OSM returned no address
+    if not loc:
+        if nearest_lm:
+            if lang == "ta":
+                if dist_m < 300:
+                    loc = f"{nearest_lm['name_ta']} அருகில், {nearest_lm['road_ta']}, வார்டு {ward or 10}, கரூர் - {pin}"
+                else:
+                    loc = f"{nearest_lm['road_ta']}, {nearest_lm['area_ta']}, கரூர் - {pin}"
+            else:
+                if dist_m < 300:
+                    loc = f"Near {nearest_lm['name_en']}, {nearest_lm['road_en']}, Ward {ward or 10}, Karur - {pin}"
+                else:
+                    loc = f"{nearest_lm['road_en']}, {nearest_lm['area_en']}, Karur - {pin}"
         else:
-            sub = osm_suburb or nearest_lm["area_ta"]
-            road = osm_road or nearest_lm["road_ta"]
-            loc = f"{road}, {sub}, கரூர் மாநகராட்சி - {pin}"
-    else:
-        if dist_m < 250:
-            road = nearest_lm["road_en"]
-            loc = f"Near {nearest_lm['name_en']}, {road}, Ward {ward}, Karur - {pin}"
-        elif dist_m < 800:
-            road = osm_road or nearest_lm["road_en"]
-            loc = f"{road}, {nearest_lm['area_en']}, Ward {ward}, Karur - {pin}"
-        else:
-            sub = osm_suburb or nearest_lm["area_en"]
-            road = osm_road or nearest_lm["road_en"]
-            loc = f"{road}, {sub}, Karur Municipality - {pin}"
+            loc = f"Lat: {lat:.5f}, Lng: {lng:.5f}"
 
     result = {
         "address": loc,
-        "landmark_en": nearest_lm["name_en"] if nearest_lm else "Karur",
-        "landmark_ta": nearest_lm["name_ta"] if nearest_lm else "கரூர்",
-        "road_en": nearest_lm["road_en"] if nearest_lm else "Main Road",
-        "road_ta": nearest_lm["road_ta"] if nearest_lm else "முக்கிய சாலை",
+        "landmark_en": nearest_lm["name_en"] if nearest_lm else "",
+        "landmark_ta": nearest_lm["name_ta"] if nearest_lm else "",
+        "road_en": nearest_lm["road_en"] if nearest_lm else "",
+        "road_ta": nearest_lm["road_ta"] if nearest_lm else "",
         "ward": ward,
         "postcode": pin,
-        "distance_to_landmark_m": round(dist_m, 1),
+        "distance_to_landmark_m": round(dist_m, 1) if nearest_lm else 0,
         "lat": lat,
         "lng": lng
     }
@@ -340,20 +412,21 @@ def reverse_geocode(lat: float = Query(...), lng: float = Query(...), lang: str 
 
 @router.get("/search")
 def search_places(q: str = Query(...), lang: str = Query("ta")):
-    query = q.strip().lower()
+    query = q.strip()
     if not query:
         return []
 
     matched = []
+    q_lower = query.lower()
     for lm in KARUR_LANDMARKS:
         match_score = 0
-        if query in lm["name_en"].lower() or query in lm["name_ta"].lower():
+        if q_lower in lm["name_en"].lower() or q_lower in lm["name_ta"].lower():
             match_score += 10
-        if query in lm["road_en"].lower() or query in lm["road_ta"].lower():
+        if q_lower in lm["road_en"].lower() or q_lower in lm["road_ta"].lower():
             match_score += 6
-        if query in lm["area_en"].lower() or query in lm["area_ta"].lower():
+        if q_lower in lm["area_en"].lower() or q_lower in lm["area_ta"].lower():
             match_score += 4
-        if f"ward {lm['ward']}" in query or f"வார்டு {lm['ward']}" in query or f"{lm['ward']}" == query:
+        if f"ward {lm['ward']}" in q_lower or f"வார்டு {lm['ward']}" in q_lower or f"{lm['ward']}" == q_lower:
             match_score += 8
 
         if match_score > 0:
@@ -370,4 +443,33 @@ def search_places(q: str = Query(...), lang: str = Query("ta")):
             })
 
     matched.sort(key=lambda x: x["score"], reverse=True)
+
+    try:
+        encoded = urllib.parse.quote(query)
+        url = f"https://nominatim.openstreetmap.org/search?format=json&q={encoded}&addressdetails=1&limit=5&countrycodes=in"
+        req = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": "KarurCivicGuardian/1.0 (commr.karur@tn.gov.in)",
+                "Accept-Language": f"{lang},en"
+            }
+        )
+        with urllib.request.urlopen(req, timeout=3.5) as resp:
+            osm_results = json.loads(resp.read().decode('utf-8'))
+            for r in osm_results:
+                osm_lat = float(r.get("lat", 0))
+                osm_lng = float(r.get("lon", 0))
+                if any(abs(m["lat"] - osm_lat) < 0.0005 and abs(m["lng"] - osm_lng) < 0.0005 for m in matched):
+                    continue
+                disp = format_exact_address(r, lang) or r.get("display_name", "")
+                matched.append({
+                    "displayName": disp,
+                    "formattedAddress": disp,
+                    "lat": osm_lat,
+                    "lng": osm_lng,
+                    "score": 5
+                })
+    except Exception:
+        pass
+
     return matched[:8]
